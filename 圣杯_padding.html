@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            position: relative;
+            width: 60%;
+            height: 150px;
+            background-color: pink;
+            margin: 0 auto;
+            padding: 0 100px;
+        }
+        
+        section div:nth-child(1) {
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100%;
+            background-color: green;
+        }
+        
+        section div:nth-child(2) {
+            position: absolute;
+            right: 0;
+            width: 100px;
+            height: 150px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div>1</div>
+        <div>3</div>
+    </section>
+</body>
+
+</html>
