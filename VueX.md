@@ -61,30 +61,72 @@
 
   不应该直接在组件中修改store中的数据。
 
-  应该通过`mutations`中定义的函数，来修改state中的数据
+  Mutation中应该是同步函数，不要在Mutation中执行异步操作。
 
+  应该通过`mutations`中定义的函数，来修改state中的数据
+  
   * 在组件中通过`this.$store.commit('函数名')`调用Mutation中的函数，以字符串的形式提交函数名。
+
   * Mutation函数的第一个形参应为state，以修改state中的数据
+
   * Mutation函数的第二个形参为参数对象，以参数对象的属性的方式传入其他形参。
 
   * 另一种调用Mutation函数的方法：mapMutations函数
 
     使用展开运算符和mapMutations函数，将Mutation函数映射为methods中的方法。
-
+  
     对于有载荷的情况也会映射载荷。
-
+  
     ```js
-    methods: {
+  methods: {
         ...mapMutations(['函数1','函数2','函数3'……])
-    }
+  }
     ```
-
-    
-
-  ​	
-
-  ​	
 
 * Action
 
+  Action用于进行异步任务。
+
+  Action中也应该通过触发Mutation来变更数据。
+
+  * Action函数中通过形参context传入store对象，通过context.commit访问Mutation函数
+
+  * 传参类似于Mutation函数，但要先通过dispatch函数将参数传递给Action函数，再通过Action将参数传递给Mutation函数
+
+    ```js
+    addAsync(context,N) {
+                setTimeout(() => {
+                    context.commit('addN',N)
+                }, 1000);
+            }
+        }
+    ```
+
+  * 在组件中触发Action函数：
+
+    * 通过dispatch函数触发Action函数
+
+      `this.$store.dispatch('Action函数名')`
+
+    * 通过mapActions函数，将指定的actions函数，映射为当前组件的methods函数
+
+      ```
+      methods:{
+      	...mapActions(['addAsync','addNAsync'])
+      }
+      ```
+
 * Getter
+
+  Getter用于对store中的数据进行加工处理，形成新的数据，类似Vue的计算属性。
+
+  * 在组件中访问Getter
+
+    * `this.$store.getters.名称`
+
+    * 使用matGetters映射为组件的计算属性
+
+      `...mapGetters(['showNum'])`
+
+
+
