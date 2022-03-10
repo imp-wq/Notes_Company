@@ -176,3 +176,31 @@
     </template>
     ```
 
+## 动态组件
+
+* 动态组件使用`<component>`标签，通过is属性指定组件
+* 通过内置的`<keep-alive>`组件包裹，进行缓存
+
+## 异步组件
+
+* 用工厂函数`defineAsyncComponent`定义异步组件，可以让组件在需要的时候用import函数动态导入，避免一次性import太多文件，首页加载速度太慢。
+
+  ```js
+  const AsyncCategory=defineAsyncComponent(()=>import('./AsyncCategory.vue')) 
+  // 返回一个promise对象 
+  ```
+
+* 或者传入一个配置对象
+
+  ```js
+  import Loading from './Loading.vue'
+  const AsyncCategory=defineAsyncComponent(
+      {
+          loader: ()=>import('./AsyncCategory.vue')),
+       	loadingComponent: Loading // 设置占位的组件   
+      }
+  ```
+
+* suspense
+
+  
