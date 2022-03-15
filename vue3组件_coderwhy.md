@@ -205,4 +205,34 @@
 
 * suspense
 
-  
+  用于在加载之前，暂时放一个占位组件
+
+## refs
+
+* 先给DOM元素设置ref属性，再通过`this.$refs.属性值`拿到DOM元素
+* 可以通过$parent和$root获取父组件和根组件
+
+## 生命周期
+
+* 生命周期
+  * Unmounted：一般情况下不触发，在比如v-if等情况下会触发。一般会在Unmounted周期中取消注册一些监听的事件。
+* 缓存组件的生命周期：
+  * 如果组件在路由切换时被`<keep-alive>`标签缓存，则不会执行unmounted和created等生命周期。
+  * 可以用activated和deactivated来监听
+
+## 组件的v-model
+
+* 在组件上使用v-model时，相当于
+
+  ```vue
+  <custom-input v-model="searchText"></custom-input>
+  ```
+
+  ```vue
+  <custom-input
+    :model-value="searchText"
+    @update:model-value="searchText = $event"
+  ></custom-input>
+  ```
+  * v-bind单项绑定了model-value，因此要在组件的props中定义modelValue属性
+  * 监听了update事件，使用$event拿到参数
