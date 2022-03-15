@@ -24,6 +24,8 @@
 
   ` this.$emit('自定义事件名', {参数对象})`
 
+  父组件通过事件对象$event拿到参数对象
+
 * emit选项的作用：
 
   emit可以为数组形式，也可以为对象形式
@@ -235,4 +237,26 @@
   ></custom-input>
   ```
   * v-bind单项绑定了model-value，因此要在组件的props中定义modelValue属性
-  * 监听了update事件，使用$event拿到参数
+  * 监听了update事件，使用$event拿到参数，因此要注册事件，并使用$emit触发
+  * 也可以在组件中使用计算属性，在计算属性的setter中触发update事件
+
+* 在组件上使用多个v-model
+
+  * 可以使用`v-model:name=""`的方式，为多个v-model添加名称，update事件也相应的变成`update:name`
+
+## Vue3动画
+
+* transition内置组件
+
+  * 指定name属性，对应css的类名
+
+  * 原理：
+
+    当插入或删除transition组件中的元素时，Vue将会进行：
+
+    * 自动嗅探目标元素是否使用了css过渡或动画，如果运用了，则会在恰当的时机添加\删除css类名
+    * 如果transition组件提供了js钩子函数，则会在恰当时机调用
+
+  * 除了css渐变，也可以与动画配合进行使用
+
+  * 可以通过appear属性指定是否在页面第一次显示时出现动画效果
