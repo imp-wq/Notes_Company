@@ -40,6 +40,31 @@
 
   可以在template使用，可以用来代替data选项。
 
+* setup中不能使用this
+
+  因为在setup中没有绑定this
+
 * setup中的响应式API
 
-  
+  * reactive
+
+    对传入的类型有限制，必须是对象或数组。
+
+    将变量用reactive包裹就会变成响应式。即将变量作为一个对象的属性，将这个对象传给reactive。
+
+    ```js
+    const obj = reactive({
+        count: 0 // count就是响应式了
+    })
+    ```
+
+    会对响应式的变量进行劫持，收集依赖他的变量。
+
+    data选项中的数据会用reactive进行处理，以获得响应式。
+
+  * ref API
+
+    reference，ref会返回一个可变的响应式对象来维护内部的值。内部的值保存在ref的value属性中。
+
+    * 在模板中使用ref对象时，会自动进行解包。
+

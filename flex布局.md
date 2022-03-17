@@ -49,7 +49,7 @@
   * flex-start
   * flex-end
   * center
-  * stretch：拉伸，设置该属性时，子元素
+  * stretch：拉伸，设置该属性时，子元素不能设置高度
 
 ### align-content
 
