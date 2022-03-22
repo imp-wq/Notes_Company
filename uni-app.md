@@ -34,3 +34,8 @@
 
 * 类似div，容器
 * hover-class attribute：指定按下去的样式类
+
+## 样式
+
+* 在uni-app中不能使用*选择器
+* 

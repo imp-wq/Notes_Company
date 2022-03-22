@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <button id="btn">a++</button>
+    <script>
+
+        // console.log(Vue.ref)
+        const a=Vue.ref(0)
+        let b=Vue.computed(()=>a.value*2)
+        a.value=5
+       
+        document.querySelector('#btn').addEventListener('click',()=>{
+          a.value++  
+          console.log(a.value)
+          console.log(b.value)
+        })
+    </script>
+</body>
+</html>
