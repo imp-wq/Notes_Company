@@ -100,6 +100,10 @@ let {name,age} = info // name和age会失去响应性
 
   用于将响应式对象中的某个属性转换成ref对象
 
+### computed和watch
+
+* 
+
 ### 其他响应式API
 
 * unRef：val = isRef(val) ? val.value : val 的语法糖
@@ -111,5 +115,3 @@ let {name,age} = info // name和age会失去响应性
   triggerRef 手动执行shallowRef的副作用
 
 * customRef 自定义Ref，自定义什么时候触发
-
-  
