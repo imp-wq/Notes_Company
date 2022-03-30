@@ -38,8 +38,9 @@
   export default class App extends Component {
     render() {
       return (
+           {/* 直接在jsx事件中写函数逻辑的写法 */}
           <button onClick={this.btnClick}>事件</button>
-           {/* 正确写法 <button onClick={this.btnClick.bind(this)}>事件</button> */}
+           {/* 绑定this <button onClick={this.btnClick.bind(this)}>事件</button> */}
       )
     }
     btnClick() {
@@ -56,6 +57,7 @@
   export default class App extends Component {
     render() {
       return (
+           {/* 在jsx事件中调用外部函数的写法 */}
          <button onClick={()=>{this.btnClick()}}>箭头函数</button>
       )
     }
@@ -99,5 +101,45 @@
   }
   ```
 
-  
+## 状态
+
+* 像需要渲染在模板的数据，应该保存在状态里，使用普通变量react无法感知到变量变化，也就无法更新DOM
+
+* 变量需要定义在组件类的state对象中
+
+  ```react
+  export default class App extends Component {
+    state = {
+      text: '收藏'
+    }
+  }
+  ```
+
+* 变量不要直接修改，只能通过组件类的setState方法进行修改
+
+  ```react
+    <button
+            onClick={() => {
+              this.setState({
+                text: '取消'
+              })
+            }}
+          >
+  ```
+
+* state也可以定义在constructor中，但是必须要手动调用super以继承父类属性
+
+  ```react
+  constructor() {
+          super()
+          this.state={
+              flag:true
+          }
+      }
+  ```
+
+## 列表渲染
+
+* 使用原生es的map函数，将列表中的数据对应成jsx语法
+* 
 
