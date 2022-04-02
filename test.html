@@ -1,44 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        const fn1 = () => {
-            return new Promise((resolve) => {
-                    console.log('fn1执行')
-                    resolve('bbbb')
-                })
-                .then((b) => {
-                    console.log('第一个then')
-                    console.log(b)
-                    return new Promise((resolve, reject) => {
-                        reject(11111)
-                    })
-                }).then((a) => {
-                    console.log('第二个then')
-                    console.log(a)
-                }, (a) => {
-                    console.log('执行catch')
-                    console.log(a)
-                })
-        }
-
-        fn1().then(() => {
-            console.log('再次指定then')
+      const fn1 = () => {
+        return new Promise((resolve) => {
+          console.log('fn1执行')
+          resolve('bbbb')
         })
+          .then((b) => {
+            console.log('第一个then')
+            console.log(b)
+            return new Promise((resolve, reject) => {
+              reject(11111)
+            })
+          })
+          .then(
+            (a) => {
+              console.log('第二个then')
+              console.log(a)
+            },
+            (a) => {
+              console.log('执行catch')
+              console.log(a)
+            }
+          )
+      }
 
-        async function f2() {
-            return 111
-        }
-        console.log(f2())
+      fn1().then(() => {
+        console.log('再次指定then')
+      })
+
+      async function f2() {
+        return 111
+      }
+      console.log(f2())
+
+      
+
     </script>
-</body>
-
+  </body>
 </html>

@@ -115,3 +115,12 @@ let {name,age} = info // name和age会失去响应性
   triggerRef 手动执行shallowRef的副作用
 
 * customRef 自定义Ref，自定义什么时候触发
+
+
+
+## 开发中遇到的一些问题
+
+* 作用域问题，何时使用块级作用域
+* 对于想要全局挂载的属性，global property如何处理
+* 通过ref获取DOM
+
