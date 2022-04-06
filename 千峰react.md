@@ -117,6 +117,8 @@
 
 * 变量不要直接修改，只能通过组件类的setState方法进行修改
 
+  setState方法会导致render函数执行，DOM更新
+
   ```react
     <button
             onClick={() => {
@@ -138,8 +140,146 @@
       }
   ```
 
+### setState是异步更新的
+
+* 多次调用setState对同一个变量进行同样的更新时，可能会被合并成一次
+  * setState如果处在同步逻辑中，会异步更新状态
+  * setState如果处在异步逻辑中，会同步更新状态
+
+* setState的第二个参数可以接收一个回调函数，在状态更新后执行
+
 ## 列表渲染
 
 * 使用原生es的map函数，将列表中的数据对应成jsx语法
-* 
+* 可以用Array.slice()方法，不传参，对state中的数组进行深拷贝，创建一个新数组来修改。
+* 可以用Array.splice(index,num)方法对数组元素进行删除，从第index个开始，删除num个
+
+## 事件传参
+
+* 使用bind传参
+
+  ```jsx
+   <button onClick={this.handleClick.bind(this,index)}>删除-bind</button>
+  ```
+
+* 使用箭头函数传参
+
+  ```jsx
+  <button onClick={()=>{this.handleClick(index)}}>删除-箭头函数</button>
+  ```
+
+## 条件渲染
+
+* 在{}中写三目运算符，用null代表没有元素
+
+  ```jsx
+   {this.state.list.length<=0?<div>暂无待办事项</div>:null}
+  ```
+
+* 可以使用&&进行逻辑短路，因为所有的jsx语法都可以看成react的createElement函数
+
+  ```jsx
+    {this.state.list.length<=0 && <div>暂无待办事项</div>}
+  ```
+
+* 使用className动态绑定类名，绑定display:hidden属性
+
+## 富文本展示
+
+* 为DOM元素添加attribute
+
+  ```jsx
+  <div dangerouslySetInnerHTML={{__html:'<h2>abc<h2/>'}}></div>
+  ```
+
+  容易遭受xss攻击
+
+## 属性
+
+* 用于父组件向子组件传参
+
+* 子组件应该只读的使用组件
+
+* 类组件通过this.props访问各个属性
+
+  函数式组件通过第一个形参props访问
+
+* 使用prop-types库，设置propTypes类属性对属性的类型进行验证
+
+  * 需要单独下载安装，PropTypes中是验证是不是各种类型的方法，直接使用以判断类型
+
+  * 设置类属性propTypes对props进行验证
+
+    ```js
+    Navbar.propTypes = {
+      title:PropTypes.string,
+    }
+    ```
+
+    或使用static写在类里头
+
+    ```js
+    export default class Navbar extends Component {
+         static	propTypes = {
+          title:PropTypes.string,
+        }
+    }
+    ```
+
+* 设置defaultProps类属性，来对属性设置默认值。写法同propTypes。
+
+## js的类属性和对象属性
+
+```js
+class test {
+    a=123
+static c='qwer'
+}
+
+test.b='abc'
+```
+
+* a为对象属性，只能在test实例化后的对象上访问到，无法通过test.a访问
+
+  ```js
+  test_obj=new test()
+  console.log(test_obj.a)
+  ```
+
+* b为类属性，只能通过test.b访问到，无法在test实例化后的对象上访问
+
+* c可以同时通过test.c和在test实例化后的对象上被访问到
+
+## 受控/非受控组件
+
+* 非受控组件：
+
+  ​	比如对于input输入框，通过defaultValue设置其默认值，不将其value绑定为state中的属性，每次value改变时不会被react感知到，不会触发setState等方法。
+
+* 受控组件：
+
+  ​	将input的value与状态中的value变量进行绑定，监听其onChange方法，在input的value改变时，令state中的value变量也进行改变。这样每次input的value改变，react都能感知到。
+
+## 父子组件通信
+
+* 父组件向子组件传参：props
+* 子组件向父组件传参：父组件向子组件传入一个回调函数，子组件调用该回调函数。
+
+:star: 在react中，应当尽量多写无状态组件，尽量多写受控组件，尽量少写有状态组件（尽量给子组件设置状态）
+
+
+
+
+
+
+
+
+
+## 进度记录：
+
+1. 暂时跳过选项卡、卖座案例
+2. setState异步更新，betterScroll案例
+3. 受控与非受控的选项卡
+
+
 
