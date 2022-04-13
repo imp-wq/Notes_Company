@@ -43,6 +43,18 @@
       console.log(f2())
 
       
+      const linkList={
+        value:1,
+        next:null
+      }
+      const linkList2=JSON.parse(JSON.stringify(linkList))
+      const linkList3=JSON.parse(JSON.stringify(linkList))
+
+      linkList.next=linkList2
+      linkList2.next=linkList3
+      linkList3.next=linkList 
+
+      console.log(JSON.stringify(linkList))
 
     </script>
   </body>

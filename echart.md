@@ -16,12 +16,27 @@
   Vue.prototype.$echarts = echarts // 在Vue2中可以选择挂在在Vue实例上
   ```
 
+## 初始化
+
+* 通过echarts.init方法来初始化图表实例
+
+  ```js
+  chartInstance = echarts.init(chart_ref.value,'chalk') // 初始化的同时也可以以字符串的方式引入主题
+  ```
+
+  
+
 ## 配置对象
 
 可以在官网的配置项手册中查看 [Documentation - Apache ECharts](https://echarts.apache.org/zh/option.html#title)  
 
+* 可以通过echartInstance.setOption(配置对象)来为图标实例设置配置对象，多次配置会自动进行合并
+
+
+
 * toolbox：工具箱，用于将图表保存为图片等
-* 
+
+  
 
 ## 提示信息 tooltip
 
@@ -106,7 +121,35 @@
 
 ---
 
+## 地图
 
+* 需要引入地图的json数据
+
+* 需要使用echarts.registerMap(地图名称，地图json数据)的方式注册地图
+
+* initOption中需添加geo属性
+
+  ```js
+  geo: {
+      	map:'china' // 地图名称
+  }
+  ```
+
+* series选项配置涟漪效果散点图，在地图上进一步绘制散点图
+
+  ```js
+   {
+       type:'effectScatter', // 设置涟漪散点图效果
+       name:item.name,
+       data:item.children
+       coordinateSystem:'geo' // 表示data使用地图的坐标
+       rippleEffect: {
+                scale: 5 // 设置涟漪范围
+       }
+   }
+  ```
+
+  
 
 ## 一些图表
 
@@ -177,6 +220,12 @@
 * 初始化配置
 * 获取数据之后的配置
 * 分辨率适配配置
+
+
+
+## 进度记录
+
+1. P66 先跳到后头去做全屏界面
 
 
 
