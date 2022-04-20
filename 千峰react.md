@@ -34,7 +34,7 @@
 
 * 如果在btn中使用
 
-  ```react
+  ```jsx
   export default class App extends Component {
     render() {
       return (
@@ -267,9 +267,90 @@ test.b='abc'
 
 :star: 在react中，应当尽量多写无状态组件，尽量多写受控组件，尽量少写有状态组件（尽量给子组件设置状态）
 
+## 状态提升
 
+​	子组件通过传入回调函数的形式将自身状态传给父组件，父组件将其设置为自己的状态，并可以通过props传递给其他子组件。
 
+## 发布订阅模式
 
+* 订阅者传入一个自己的回调函数到服务端保存
+* 发布者发布时，服务端调用所有订阅者的回调函数
+
+## context状态树传参
+
+跨组件通信，运用了生产者消费者的理念
+
+* 使用`const GlobalContext = React.createContext()`创建GlobalContext 组件
+
+* 使用`<GlobalContext.Provider>`组件在render函数的返回值中包裹所有生产者的DOM元素
+
+  同时在其value attribute讲参数（多个参数则以对象的形式）传递给消费者
+
+  ```jsx
+  <GlobalContext.Provider value={{a:'abc',b:'123'}}> 
+          <div>context
+            <Son/>
+          </div>
+  </GlobalContext.Provider>
+  ```
+
+* 在消费者中，` <GlobalContext.Consumer>`需要包裹一个**回调函数**，唯一参数value为生产者传递的参数
+
+  ```jsx
+    render() {
+      return (
+        <GlobalContext.Consumer>
+          {value => {
+            console.log(value)
+            return <div></div>
+          }}
+        </GlobalContext.Consumer>
+      )
+    }
+  ```
+
+* 消费者不能直接更改value中的数据，可以通过生产者在value中传入修改数据的回调函数的方式，让消费者调用，对数据进行修改
+
+  ```jsx
+  <GlobalContext.Provider
+      value={{
+          changeA: (value) => { // 修改a的回调函数，这里必须用箭头函数，以保证this指向生产者组件
+              this.setState({
+                  a: value
+              })
+          },
+              ...this.state
+      }}
+  >
+  ```
+
+## 插槽
+
+* react组件中可以通过props中的children属性`this.props.children`获取到所有放入子组件标签中的的内容
+* children中如果传入多个jsx DOM元素，可以以数组进行访问，以实现类似vue具名插槽的效果
+
+## 生命周期
+
+### 初始化
+
+初始化阶段的生命周期：constructor->render->componentDidMount
+
+* componentWillMount 已弃用，在react16.2版本中由于diff算法更新，加入了fiber技术，以防止在对比过多的DOM元素时浏览器假死，该生命周期不再安全。
+
+#### constructor
+
+可以在constructor阶段进行初始化
+
+#### componentDidMount
+
+* 只会执行一次，在组件挂载完成后。
+* 一般在该阶段进行数据请求、订阅函数的调用、添加事件监听、基于DOM元素的初始化
+
+ ### 运行
+
+运行阶段的生命周期：render->componentDidUpdate
+
+#### componentDidUpdate
 
 
 
