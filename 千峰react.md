@@ -333,7 +333,7 @@ test.b='abc'
 
 ### 初始化
 
-初始化阶段的生命周期：constructor->render->componentDidMount
+初始化阶段的生命周期：constructor->static getDerivedStateFromProps->render->componentDidMount
 
 * componentWillMount 已弃用，在react16.2版本中由于diff算法更新，加入了fiber技术，以防止在对比过多的DOM元素时浏览器假死，该生命周期不再安全。
 
@@ -348,9 +348,52 @@ test.b='abc'
 
  ### 运行
 
-运行阶段的生命周期：render->componentDidUpdate
+运行阶段的生命周期：shouldComponentUpdate->render->componentDidUpdate
+
+#### shouldComponentUpdate
+
+* 控制是否执行render函数，返回true会重新渲染，返回false不会渲染
+
+* 用于性能优化
+
+* 此时尚未进行更新，通过this访问的属性为旧状态
+
+* 可以通过传入的参数`(nextProps,nextState)`拿到更新后的状态，用于对比，判断是否需要更新
+
+* 对于有多个属性的浅层对象，可以使用`JSON.stringify`转化成字符串后判断是否相等。
+
+  
 
 #### componentDidUpdate
+
+* DOM更新完毕后执行
+* 接收两个参数
+  * prevProps：更新之前的属性
+  * prevState：更新之前的State
+
+### 销毁
+
+#### componentWillUnmount
+
+* 销毁监听器、计时器
+
+### 新生命周期
+
+#### static getDerivedStateFromProps
+
+* 在初始化以及后续更新（包括自身更新和父向子传参更新）时都会执行
+
+* 调用该方法时，需要在类中已定义state，且需要返回一个对象来更新state
+* 参数为`(nextProps,nextState)`，拿到更新后的props和state
+* 因为是static方法，因此该方法中的this指向undefined
+* 只应进行将props转化为state的操作，不要进行诸如数据请求等异步操作
+
+#### getSnapshotBeforeUpdate
+
+* 可以用于记录DOM状态
+* 
+
+
 
 
 
