@@ -395,31 +395,168 @@ test.b='abc'
 
 
 
-
-
 ## Hooks
+
+### 纯函数和副作用
+
+* 纯函数：
+
+  ​	即作用仅为返回一个值的函数，对于相同的输入输出永远的是相同的。函数的输出与输入值以外的所有其他状态都无关，且除了输出返回值没有其他效果，比如不能有修改全局状态、修改输入值、写入文件等操作。
+
+* 副作用：
+
+  ​	函数多次调用时会重复产生的附加影响。
+
+  ​	即纯函数不应该直接包含产生副作用的操作，只应通过调用其他函数产生副作用。
+
+  ​	react的函数式组件应当都是纯函数（只以返回一个jsx DOM结构为目的），通过调用**React Hooks**来进行副作用操作。
 
 ### useState
 
 * 在函数式组件中使用状态
 * 传入参数为默认值
-* 返回值为一个数组，第一个元素是状态变量，第二个是设置状态的函数
+* 返回值为一个数组，第一个元素是状态变量，第二个是设置状态的函数（唯一改变该状态的手段）
 
 ### useEffect
 
+* 执行副作用，可以进行发送请求等操作
 
+* 传入参数：`useEffect(callback,[依赖数组])`
+  * 第二个参数为useEffect的依赖，只有依赖当中的数据有变化，useEffect才会重新执行。如果传入一个空数组，则useEffect只会执行一次（起到类似componentDidMount的效果）
+  * 如果不传入依赖，则每次更新时都会执行useEffect
+  
+* 返回值：可以返回一个函数，这个函数会在组件被销毁时调用一次，进行一些比如定时器/监听器的销毁操作。
 
+* useEffect可以使用多次，多个不相关的副效应应当放在不同的useEffect当中，不应该写在一起。
 
+* useEffect和useLayoutEffect
 
+  推荐优先使用useEffect
 
+  * useEffect会在页面渲染完成后调用
+  * useLayoutEffect会在DOM更新后、页面渲染之前被同步的调用，有可能会阻塞页面渲染。
+  
+* 常见使用场景：
 
+  * 获取数据
+  * 事件的监听和订阅
+  * 改变DOM
+  * 输出日志
 
+### useContext
+
+* 在函数式组件中使用由`<GlobalContext.Consumer>`提供的数据
+
+  `const context=useContext(context对象) // 获取倒context对象`
+
+### useCallback
+
+* 参数传入一个回调函数和依赖数组，会记忆函数（包括传入的参数等），只有在依赖改变时才会更新函数。
+
+  避免函数被不必要的重复创建。
+
+### useMemo
+
+* 传入参数也是callback和依赖数组
+
+* 类似vue中的计算属性，会将callback的**返回值**缓存，当依赖数组发生变化时重新计算
+
+  缓存的时callback的返回值，这也是与useCallback的主要区别
+
+### useRef
+
+* useRef可以在函数式组件中使用Ref，用于获取DOM节点。类似类组件的`React.createRef()`
+* 可以用于保存一个变量，在每次函数式组件更新时，保存这个变量的值
+
+### useReducer
+
+### 自定义hooks
+
+* 以`use`开头的函数
+
+* 可以对现有的hooks进行封装，以进行复用
+
+  ​	因为只能在函数式组件或自定义hooks中使用React hooks，因此如果想封装带有hooks的逻辑，就需要写成自定义hooks。
+
+  ​	比如可以对请求一个接口进行封装，在自定义hooks内部使用useEffect请求数据，保存在useState创建的状态中，再返回出来。
+
+  ```jsx
+  // 对请求电影列表接口的逻辑进行封装
+  function useCinemaList() {
+    const [list,setList]=useState([])
+    useEffect(()=>{
+      axios.get('url').then(res=>setList(res))
+    })
+    return {list}
+  }
+  ```
+
+## React路由
+
+ [Declarative routing for React apps at any scale | React Router](https://reactrouter.com/) 
+
+### 反向代理
+
+​	服务器与服务器之间请求数据没有跨域限制，因此先用反向代理服务器向其他涉及跨域的服务器请求数据，再通过浏览器向反向代理服务器请求数据，以解决跨域问题。
+
+* 在`create-react-app`脚手架中，通过`http-proxy-middleware`中间件进行反向代理
+
+  1. 安装 
+
+     `npm i http-proxy-middleware`
+
+  2. 在src目录下创建`setupProxy.js`文件，文件名不能改
+
+  3. 在文件中进行配置
+
+     ```js
+     import { createProxyMiddleware } from "http-proxy-middleware"
+     
+     export default app=>{
+         // 只代理`/api`这一类请求
+       app.use('/api',createProxyMiddleware({
+         target:'http://localhost:5000',// 要访问的目标地址
+         changeOrigin:true
+       }))
+     }
+     
+     // ----其他文件中------
+     // 后续请求`/api`的接口，会自动补充target的地址，并由反向代理服务器发起请求
+     axios.get('/api/xxxxxx').then(res=>{})
+     ```
+
+  * 可以添加多个反向代理
+
+* 应该也可以在package.json中配置反向代理
+
+## css模块化
+
+* 在create-react-app脚手架中，可以将css的名称命名为`[文件名].module.css`的形式，会在编译时将类名加上文件名和hash值，防止样式冲突。
+
+* 在引入`[文件名].module.css`的css文件时，需要通过
+
+  ```jsx
+  import style from './styleSheet.css'
+  
+  // 通过`style.原类名`的形式拿到新生成的类名
+  function app() {
+      return (
+          {/*title为原类名*/}
+      	<div className={style.title}>123aaaa</div>
+      )
+  }
+  ```
+
+  
 
 ## 进度记录：
 
 1. 暂时跳过选项卡、卖座案例
 2. setState异步更新，betterScroll案例
 3. 受控与非受控的选项卡
+4. 暂时跳过54-57的案例
+5. 暂时跳过useReducer
+6. 暂时跳过路由，v6已经出了，v5比较老了
 
 
 
