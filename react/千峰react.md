@@ -470,6 +470,66 @@ test.b='abc'
 
 ### useReducer
 
+* 用于和Redux配合使用
+
+  * 创建reducer和初始状态对象
+  * 在**父组件**中使用useReducer创建state和dispatch
+  * 通过context将state和dispatch共享给子组件
+  * 子组件中根据需要通过dispatch触发各类事件，在reducer中根据type进行分支判断
+
+  ```jsx
+  // 在reducer中对状态进行修改
+  const reducer = (prevState, action) => {
+    console.log(action)
+    // 不要直接修改原状态
+    const newState = { ...prevState }
+    // 通过对type进行分支判断，对状态进行修改
+    switch (action.type) {
+      case 'decrement':
+        // 也可以直接 return {count: prevState.count - 1}
+        newState.count--
+        break
+      case 'increment':
+        newState.count++
+        break
+      default: 
+    }
+    // 返回新的状态
+    return newState
+  }
+  
+  // 对状态进行初始化
+  const initialState={
+    count:0
+  }
+  
+  // useReducer的第一个参数reducer为状态的处理函数，第二个参数为对状态进行初始化的对象
+  const App = () => {
+      const [state, dispatch] = useReducer(reducer,initialState)
+      return (
+          ...
+      )
+  }
+  
+  
+  // 通过state.属性名 访问state中的属性，
+  // dispatch函数传入，通过type属性在reduce中进行分支判断，可以加上其他字段作为参数
+  return (
+      <div>
+        <button onClick={()=>{
+          dispatch({
+            type:'decrement'
+          })
+        }}>-</button>
+        {state.count}
+        <button>+</button>
+        </div>
+    )
+  ```
+
+* 可以与context结合使用，将state和dispatch作为value传递给子组件，以达到与子组件共享状态的目的。
+* reducer函数中不能进行异步操作。
+
 ### 自定义hooks
 
 * 以`use`开头的函数
@@ -493,7 +553,7 @@ test.b='abc'
 
 ## React路由
 
- [Declarative routing for React apps at any scale | React Router](https://reactrouter.com/) 
+ [Declarative routing for React  apps at any scale | React Router](https://reactrouter.com/) 
 
 ### 反向代理
 
@@ -536,7 +596,7 @@ test.b='abc'
 * 在引入`[文件名].module.css`的css文件时，需要通过
 
   ```jsx
-  import style from './styleSheet.css'
+  import style from './styleSheet.module.css'
   
   // 通过`style.原类名`的形式拿到新生成的类名
   function app() {

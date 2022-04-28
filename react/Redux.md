@@ -20,3 +20,15 @@
   * Flux的一种实现
   * 使用js设计的，不一定只能跟React一块用
 
+##  使用
+
+* 安装
+
+  `npm i redux`
+
+* 初始化
+
+  store模块：
+
+  * 通过createStore(reducer)传入配置好的reducer，创建store对象
+  * 其他组件中通过store.dispatch触发action，
