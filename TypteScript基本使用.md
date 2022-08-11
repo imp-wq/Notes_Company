@@ -2,9 +2,15 @@
 
 ## 基础
 
-* 全局安装ts 
+* 安装ts 
 
-  `npm i typescript -g`
+  `yarn add typescript --dev`
+
+* 全局安装ts
+
+  `yarn global add typscript`
+
+  要全局安装才能使用tsc命令。
 
 * 使用tsc命令编译ts文件
 
