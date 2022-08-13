@@ -108,3 +108,22 @@
   * 为什么要有URL编码：
     * 让URL可移植portable，一些协议，比如Simple Mail Transfer Protocol，会剥去一些特定字符，因此URL需要使用通用的字符。
     * 转义序列：使用US-ASCII的子集对任意字符进行编码。
+  
+  * 最好对URL中所有不安全的字符进行编码，使其成为可以在各应用之间共享的规范形式。
+
+* URN：URL表示的是实际地址，因此如果资源位置发生了改变，就无法通过原先的URL进行定位。URN是为资源定一个稳定的名称，无论对象搬到什么地方都不改变。
+
+  PURL（persistent uniform resource locators）是URN的一个实现，在搜索资源过程中加入一个中间层，通过一个中间resource locator服务器对实际url进行登记和跟踪。
+
+## 三、http报文
+
+* 基本概念：
+  * 事务transaction
+  * 流入inbound：报文从客户端流入服务器。
+  * 流出outbound：报文从服务器流出到用户的agent代理。
+  * 报文会从上游upstream发送者流向下游downstream接收者。
+  * 行终止序列CRLF：一个回车符加(ASCII 13)一个换行符(ASCII 10)。
+* 报文的组成：
+  * start line
+  * header
+  * body
