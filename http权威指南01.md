@@ -123,7 +123,24 @@
   * 流出outbound：报文从服务器流出到用户的agent代理。
   * 报文会从上游upstream发送者流向下游downstream接收者。
   * 行终止序列CRLF：一个回车符加(ASCII 13)一个换行符(ASCII 10)。
+  
 * 报文的组成：
   * start line
+  
   * header
+  
+    * 首部总应该以一个空行结束，即单个的CRLF。
+  
+    * http版本号：`HTTP/<major>.<minor>`
+  
+      数字应该分开进行比较，比如2.22比2.3版本新，因为次版本号22比3大。
+  
   * body
+
+* http 0.9：
+
+  * 请求只包含方法和url，响应只有实体。
+
+  * 没有版本信息，因为当时只有唯一一个版本。
+
+    没有首部、reason phrase和状态码。
