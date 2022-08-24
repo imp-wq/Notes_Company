@@ -22,7 +22,7 @@
 
   * URN：作为特定唯一名称使用，与资源目前的所在地无关，比如用于internet标准文档等。目前处于实验阶段。
 
-* 事务：
+* 事务transaction：
   * 一个HTTP事务由一条请求和一个响应组成，通过格式化的数据HTTP 报文(message)进行。
   * HTTP method：常见的由GET PUT DELETE POST HEAD。
   * 状态码
