@@ -144,10 +144,26 @@
   * 持久连接：
 
     * HTTP/1.1允许HTTP设备在transaction结束后将TCP连接保持在打开状态，供未来的HTTP请求重用。这种在transaction结束后仍保持打开状态的TCP连接称为持久连接。
+    
     * 非持久连接会在transaction结束后关闭，持久连接会在不同的transaction之间保持打开状态，直到客户端或服务器决定将其关闭。
+    
     * 持久连接可以避免缓慢的连接建立阶段，以及慢启动的拥塞适应阶段。
+    
     * 持久连接有两种类型：
       * keep-alive：较老。
       * persistent：现代。
+    
+    * keep-alive：由HTTP/1.0版本提出，客户端可以通过包含`Connection：Keep-Alive`首部请求将一条连接保持在打开状态。
+    
+      * 提供了`Connection：Keep-Alive`首部后，可以通过可选首部Keep-Alive发送一些预估值，比如timeout、max等。
+    
+      * 服务器可以通过`Connection：Keep-Alive`响应首部向客户端表明发出响应之后是否会关闭连接。
+      * 实体的主体部分必须有正确的Content-Length和多媒体类型，或者使用分块传输编码，以便另一端可以在无需检测连接关闭的情况下，确定报文实体的主体部分长度。否则会导致无法精确检测出一条报文的结束和另一条报文的开始。
+      * 问题：盲中继(blind relay)代理会造成哑代理问题。
+      * Connection首部为逐跳首部，代理和中继在对报文进行转发时，应删掉Connection首部，以及里面指定的字段。
+    
+    * HTTP/1.1持久连接persistent connection：
+    
+      * HTTP/1.1 当中持久连接是默认激活的，通过显示在报文中添加`Connection:close`首部来关闭
+      * 
 
-    * keep-alive：
