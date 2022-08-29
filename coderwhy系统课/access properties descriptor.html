@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+        const obj = {
+            name: 'abcd'
+        }
+
+        const _obj = {}
+        Object.defineProperty(obj, 'name', {
+            set(value) {
+                console.log(`set:${value}`)
+                console.log(obj)
+                _obj.name = value
+            },
+
+            get() {
+                return _obj.name
+            }
+        })
+        obj.name = 123
+        obj.name = 'qwer'
+        obj.name = 'zzzz'
+        console.log(obj.name)
+
+        // Object.defineProperties(obj, {
+        //     name: {
+        //         writable: true,
+        //     },
+        //     age: {
+        //         enumerable: false
+        //     }
+        // })
+
+        console.log(Object.getOwnPropertyDescriptors(obj))
+
+        Object.preventExtensions(obj)
+        // obj.sex = 'male' 报错
+    </script>
+</body>
+
+</html>

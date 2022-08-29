@@ -51,7 +51,7 @@
     * http默认端口号80
     * IP地址可以通过DNS由域名转换得到。
 
-<img src="D:\wzy\Note\noteimages\http权威指南-http通信过程.PNG" style="zoom:50%;" />
+<img src=".\noteimages\http权威指南-http通信过程.PNG" style="zoom:50%;" />
 
 ### telnet
 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Person(name) {
+            this.name = name
+
+            this.eating = function () {
+                console.log('eating', this)
+            }
+        }
+
+        Person.prototype.running = function () {
+            console.log('running', this)
+        }
+
+        const stu1 = new Person('stu1')
+        const stu2 = new Person('stu2')
+
+        stu1.eating()
+        stu1.running()
+        console.log(stu1.running === stu2.running)
+        console.log(stu1.eating === stu2.eating)
+        console.log(Person.prototype.constructor)
+
+        Object.getPrototypeOf(stu1).message = 'hello'
+        stu1.message = 'world'
+        console.log(stu1.message, stu2.message)
+    </script>
+</body>
+
+</html>
