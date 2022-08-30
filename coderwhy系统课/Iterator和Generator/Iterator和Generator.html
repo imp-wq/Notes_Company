@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const names = ['abc', 'cba', 'nba']
+
+        let index = 0
+        const namesIterator = {
+            next() {
+                if (index < names.length) {
+                    return { done: false, value: names[index++] }
+                } else {
+                    return { done: true }
+                }
+            }
+        }
+
+        const obj = {
+            friends: ['abc', 'cba', 'nba'],
+            [Symbol.iterator]() {
+                let index = 0
+                return {
+                    next: () => {
+                        if (index < names.length) {
+                            // 通过next写成箭头函数，不绑定this，让this指向obj对象。
+                            return { done: false, value: this.friends[index++] }
+                        } else {
+                            return { done: true }
+                        }
+                    }
+                }
+            }
+        }
+
+        for (const i of obj) {
+            console.log(i)
+        }
+
+
+        const obj2 = {
+            name: 'dog',
+            age: 5,
+            address: 'xxxx',
+            [Symbol.iterator]() {
+                const entries = Object.entries(this)
+                let index = 0
+                return {
+                    next() {
+                        if (index < entries.length) {
+                            return { done: false, value: entries[index++] }
+                        } else {
+                            return { done: true }
+                        }
+                    },
+                    return() {
+                        console.log('return')
+                        return { done: true }
+                    }
+                }
+            }
+        }
+
+        for (const i of obj2) {
+            if (i[1] === 'dog') {
+                break
+            }
+            console.log(i)
+        }
+
+        console.log(...[123, 321])
+
+
+    </script>
+</body>
+
+</html>

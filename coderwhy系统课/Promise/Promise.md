@@ -40,3 +40,10 @@
   * value/reason：成功的结果/失败的原因。
 
 * race
+
+  存在问题：无论结果是fulfiled还是rejected，都会导致拿不到其他Promise的结果。
+
+* any：类似race，但要等到第一个状态为fulfiled才会返回其结果。如果所有Promise都reject，则会等到最后一个Promise reject之后才转为rejected（内部创建错误信息：All promises were rejected. ）。
+
+
+

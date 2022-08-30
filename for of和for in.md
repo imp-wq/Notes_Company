@@ -3,7 +3,7 @@
 [ES6语法六之for..of循环 - 掘金 (juejin.cn)](https://juejin.cn/post/7135249879416668191)
 
 * for...of为es6新增语法，用于遍历iterable的值
-* for...in用于在数组的index上循环。
+* for...in用于遍历一个对象的key。
 
 ### The iterator protocol
 
