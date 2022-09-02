@@ -27,6 +27,7 @@
 * 注意：正常情况加对象并非可迭代对象，能使用展开运算符和解构赋值是进行了特殊处理。因此对象无法像数组一样，在作为函数参数时被展开。
 * 一些构造函数（Set,Map,WeakSet,WeakMap）/方法（Promise.all, Array.from等）要求传入可迭代对象。
 * class中也可以实现[Symbol.iterator]方法，从而使实例对象可迭代。
+* 可用于`yield *`。
 
 ## 生成器Generator
 
@@ -53,4 +54,10 @@
     * return：可以通过generator.return()提前中断生成器的执行。
     * throw：通过`generator.throw()`抛出异常。
 
-    
+* 可以通过`yield * 可迭代对象`委托给一个可迭代对象，从中依次迭代。
+
+  >The **`yield*` expression** is used to delegate to another [`generator`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*) or iterable object.
+
+* 在迭代器中使用Generator：`*[Symbol.iterator](){}`
+
+## async-await
