@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const username = 'coderpppp'
+    const password = '123qwe'
+
+
+    let token = localStorage.getItem('token')
+    if (!token) {
+      console.log('从服务器获取token')
+    }
+
+    localStorage.setItem('username', username)
+    localStorage.setItem('password', password)
+    localStorage.setItem('token', 'xxx')
+  </script>
+</body>
+
+</html>

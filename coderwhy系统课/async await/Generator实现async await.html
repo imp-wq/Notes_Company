@@ -10,7 +10,45 @@
 
 <body>
     <script>
+        function requestData(data) {
+            return new Promise((resolve, reject) => setTimeout(() => {
+                resolve(data)
+            }, 1000)
+            )
+        }
 
+        function* getData() {
+            const res1 = yield requestData('data2')
+            console.log(res1)
+            const res2 = yield requestData(res1 + 'data3')
+            console.log(res2)
+            const res3 = yield requestData(res2 + 'data4')
+            console.log(res3)
+
+        }
+
+        // const generator = getData('data1')
+        // generator.next().value.then(res1 => {
+        //     console.log(res1)
+        //     generator.next(res1).value.then(res2 => {
+        //         console.log(res2)
+        //     })
+        // })
+
+        function execGeneratorFn(genFn) {
+            const generator = genFn()
+            exec()
+
+            function exec(res) {
+                const result = generator.next(res)
+                if (result.done) return
+                result.value.then(res => {
+                    exec(res)
+                })
+            }
+        }
+
+        execGeneratorFn(getData)
     </script>
 </body>
 
