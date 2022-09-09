@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const reg = new RegExp('abc', 'ig')
+    const reg2 = /abc/ig
+
+    const str = 'asdf12312kjlkj1l2k3jl'
+
+    const newStr = str.replace(/\d+/ig, '')
+    console.log(newStr)
+
+    console.log(...str.matchAll(/\d/g))
+
+
+  </script>
+</body>
+
+</html>

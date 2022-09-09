@@ -9,24 +9,22 @@
 </head>
 
 <body>
-  <script>
-    const username = 'coderpppp'
-    const password = '123qwe'
+  <script type="module">
+    import Cache from './cache.js'
 
-
-    let token = localStorage.getItem('token')
-    if (!token) {
-      console.log('从服务器获取token')
-    }
-
-    localStorage.setItem('username', username)
-    localStorage.setItem('password', password)
-    localStorage.setItem('token', 'xxx')
-
+    console.group('原生')
+    // console.log(JSON.parse(undefined))
     const obj = { a: 123, b: 'hello' }
     // 对象类型不能直接存储，需要JSON.stringify
     localStorage.setItem('obj', obj)
     console.log(localStorage.getItem('obj'))
+    console.groupEnd()
+
+    console.group('Cache类')
+    const localCache = new Cache()
+    localCache.setCache('obj-cache', obj)
+    console.log(localCache.getCache('obj-cache'))
+    console.groupEnd()
 
   </script>
 </body>
