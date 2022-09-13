@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" id="input">
+  <div id="tips"></div>
+  <script>
+    const input = document.querySelector('#input')
+    const tips = document.querySelector('#tips')
+
+    input.addEventListener('input', (e) => {
+      const value = e.srcElement.value
+      if (/^a{5,8}$/.test(value)) {
+        tips.textContent = '输入的内容符合要求'
+      } else {
+        tips.textContent = '输入的内容不符合要求'
+      }
+    })
+
+
+    const htmlElement = '<div><p>哈哈哈哈</p><span>嘻嘻嘻</span></div>'
+    const tagPattern = /\<\/?[a-z][a-z0-9]*\>/ig
+    console.log(htmlElement.match(tagPattern))
+
+  </script>
+</body>
+
+</html>
