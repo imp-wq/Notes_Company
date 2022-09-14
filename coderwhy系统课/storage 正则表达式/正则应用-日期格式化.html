@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="date"></div>
+  <script>
+    function formateDate(timestamp, fmtString) {
+      const date = new Date(timestamp)
+
+      const year = date.getFullYear()
+      const month = date.getMonth() + 1
+      // getDay是用来获取一周中的天数的，getDate是获取日期的。
+      const day = date.getDate()
+      const hour = date.getHours()
+      const minute = date.getMinutes()
+      const second = date.getSeconds()
+
+      // 该对象以键值对的形式保存{匹配格式化字符串的正则-替换的实际日期}
+      const dateObj = {
+        'y+': year,
+        'M+': month,
+        'd+': day,
+        'h+': hour,
+        'm+': minute,
+        's+': second
+      }
+      for (const key in dateObj) {
+        // 将字符串转换成对应的正则
+        const keyRe = new RegExp(key)
+        // 使用test测试fmtString中是否有满足规则的字符串。
+        if (keyRe.test(fmtString)) {
+          // 取出对应的值，一位数前头需补上0
+          const value = `${dateObj[key]}`.padStart(2, '0')
+          fmtString = fmtString.replace(keyRe, value)
+        }
+      }
+
+      return fmtString
+    }
+
+    const div = document.querySelector('#date')
+    div.textContent = formateDate(new Date(), 'hh:mm:ss yyyy-MM-dd')
+  </script>
+</body>
+
+</html>
