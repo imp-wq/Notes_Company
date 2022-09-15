@@ -1,0 +1,9 @@
+* vue.config.js：再configureWebpack属性中对webpack进行配置。
+* jsconfig.json/tsconfig.json：用于告知vscode一些配置，从而让vscode给出更好的提示。
+  * 比如其中配置的path选项，可以让vscode对路径别名更好的提示。
+  * target：最终打包出的代码。
+  * module：模块化规范，exnext表示es最新的版本。
+  * lib：对当前项目用到的库进行提示。
+    * esnext：最新的es语法提示。
+    * dom：dom操作的提示。
+    * scripthost：浏览器js的宿主环境。
