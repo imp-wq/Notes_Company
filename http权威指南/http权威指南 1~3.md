@@ -22,7 +22,7 @@
 
   * URN：作为特定唯一名称使用，与资源目前的所在地无关，比如用于internet标准文档等。目前处于实验阶段。
 
-* 事务：
+* 事务transaction：
   * 一个HTTP事务由一条请求和一个响应组成，通过格式化的数据HTTP 报文(message)进行。
   * HTTP method：常见的由GET PUT DELETE POST HEAD。
   * 状态码
@@ -51,7 +51,7 @@
     * http默认端口号80
     * IP地址可以通过DNS由域名转换得到。
 
-<img src="D:\wzy\Note\noteimages\http权威指南-http通信过程.PNG" style="zoom:50%;" />
+<img src=".\noteimages\http权威指南-http通信过程.PNG" style="zoom:50%;" />
 
 ### telnet
 
@@ -273,4 +273,23 @@
 
   * 信息性首部：
 
+    * Allow：可以对此实体执行的请求方法。
+    * Location：告知客户端实体url，用于将接收端定向到资源url。
+  
+  * 内容首部：提供与实体内容有关的特定信息，比如类型、尺寸等。
+  
+    `Cotent-xxx`形式。
+  
+    * Content-Base：指定解析主体中相对url时使用的基础url。
+    * Content-Encoding：主体的编码方式。
+    * Content-Language
+    * Content-Length
+    * Content-Type：主体的对象类型。
+  
+  * 实体缓存首部：提供了与被缓存实体有关的信息。
+  
+    * ETag：与此实体相关的实体标记。
+    * Expires：实体的失效时间，失效后从源端再获取。
+    * Last-Modified：实体最后一次被修改的时间。
+  
     

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // inherit应作为继承工具函数
+        function inherit(Subtype, Supertype) {
+            // 创建一个新obj，其隐式原型指向父类的prototype，将其作为子类构造函数的显示原型。
+            Subtype.prototype = Object.create(Supertype.prototype)
+
+            // 利用setPrototypeOf设置原型
+            // Object.setPrototypeOf(Subtype.prototype, Supertype.prototype)
+
+            // 兼容老版本浏览器的方法
+            // function createObject(o) {
+            //     function F() { }
+            //     F.prototype = o
+            //     return new F()
+            // }
+            Object.defineProperty(Student.prototype, 'constructor', {
+                value: Subtype,
+                writable: true,
+                configurable: true
+            })
+        }
+
+        function Person(name, age) {
+            this.name = name
+            this.age = age
+        }
+
+        Person.prototype.speaking = function () {
+            console.log('speaking')
+        }
+
+        function Student(name, age, sno, score) {
+            Person.call(this, name, age)
+            this.score = score
+            this.sno = sno
+        }
+        // 使其获取父类的方法
+        inherit(Student, Person)
+        // 子类特有的方法
+        Student.prototype.studying = function () {
+            console.log('studying')
+        }
+
+        const stu1 = new Student('dog', 5, 'qwer', 78)
+        console.log(stu1)
+        stu1.speaking()
+        stu1.studying()
+
+
+    </script>
+</body>
+
+</html>

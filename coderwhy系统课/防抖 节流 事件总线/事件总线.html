@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="btn">btn</button>
+  <script type="module">
+    import EventBus from './eventBus.js'
+
+    const emitter = new EventBus()
+
+    const fn = (a, b) => {
+      console.log('event事件被触发了', a, b)
+    }
+    emitter.on('event', fn)
+
+    const btn = document.querySelector('#btn')
+
+
+    btn.addEventListener('click', () => {
+      emitter.emit('event', 123, 'hello')
+    })
+
+
+    setTimeout(() => {
+      console.log('移除event事件的fn函数')
+      emitter.off('event', fn)
+    }, 5000)
+
+  </script>
+</body>
+
+</html>

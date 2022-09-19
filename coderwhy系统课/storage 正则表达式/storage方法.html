@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 将storage id存储在常量中，避免写错。
+    const ACCESS_TOKEN = 'token'
+    localStorage.setItem(ACCESS_TOKEN, 'xxxx-token')
+    const token = localStorage.getItem(ACCESS_TOKEN)
+    console.log(token)
+
+  </script>
+</body>
+
+</html>

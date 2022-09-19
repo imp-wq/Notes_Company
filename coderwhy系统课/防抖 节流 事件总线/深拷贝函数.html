@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // 判断是否为对象的方法。
+    function isObject(value) {
+      const valueType = typeof value
+      return (value !== null) && (valueType === 'object' || valueType === 'function')
+    }
+
+
+    // 保存已经经过深拷贝的对象，以{原对象: 深拷贝后的对象}形式保存，以只对每个原对象进行一次新拷贝，避免循环引用问题。
+    // const map = new WeakMap()
+    function deepCopy(obj, map = new WeakMap()) {
+      // 对Symbol类型进行特殊处理。
+      if (typeof obj === 'symbol') {
+        return Symbol(obj.description)
+      }
+
+      // 如果不是对象，直接返回
+      if (!isObject(obj)) {
+        return obj
+      }
+
+      // 对Set类型进行特殊处理。
+      if (obj instanceof Set) {
+        const newSet = new Set()
+        for (const setItem of obj) {
+          newSet.add(deepCopy(setItem))
+        }
+        return newSet
+      }
+
+      // 对函数进行特殊处理。
+      if (typeof obj === 'function') {
+        return obj
+      }
+
+      // 对Array进行特殊处理，之后的key等同于Array的index，因此遍历过程可以复用。
+      const newObj = Array.isArray(obj) ? [] : {}
+
+      // 先判断map中是否已经保存该对象的深拷贝对象，如果有则直接返回。
+      let cache
+      if (cache = map.get(obj)) {
+        return cache
+      }
+
+      // 将深拷贝后的新对象存入map
+      map.set(obj, newObj)
+      for (const key in obj) {
+        // 如果是非对象类型，直接返回，如果是对象类型，再次深拷贝。
+        newObj[key] = deepCopy(obj[key])
+      }
+
+      // 对Symbol keys进行遍历。这里用相同的description创建一个新的symbol key。
+      const symbolKeys = Object.getOwnPropertySymbols(obj)
+      for (const symbolKey of symbolKeys) {
+        newObj[Symbol(symbolKey.description)] = deepCopy(obj[symbolKey])
+      }
+      return newObj
+    }
+
+    /************************************test*******************************************/
+    const s1 = Symbol()
+    const s2 = Symbol('des')
+
+    const info = {
+      name: 'dog',
+      age: 5,
+      address: {
+        province: 'bj',
+        city: 'bj'
+      },
+      friend: [{
+        name: 'pig',
+        address: 'sh'
+      }, {
+        name: 'cat',
+        address: 'gz'
+      }],
+      properties: new Set(['house', 'food', 'cloth']),
+      [s1]: 'aaaaa',
+      [s2]: 'bbbb'
+    }
+
+    info.self = info
+
+    // isObject(info)
+    // isObject(null)
+
+    console.log(deepCopy(info))
+
+  </script>
+</body>
+
+</html>

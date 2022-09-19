@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Person(name) {
+            this.name = name
+        }
+        console.log(Object.keys(Person.prototype))
+
+        Person.prototype = {
+            address: 'xxxxx',
+            number: 123,
+            // constructor: Person
+        }
+
+        Object.defineProperty(Person.prototype, 'constructor', { value: 'Person' })
+        const stu1 = new Person('stu1')
+        const stu2 = new Person('stu2')
+        console.log(stu1.address, stu2.number)
+        console.log(Object.getPrototypeOf(stu1))
+        console.log(Object.keys(Person.prototype))
+
+    </script>
+</body>
+
+</html>

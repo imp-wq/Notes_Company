@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="btn">click</button>
+  <button id="cancel">cancel</button>
+  <script>
+    'use strict'
+
+    // 传入immediate=true后，第一次调用不进行防抖，从第二次开始防抖
+    // immediate变量只用于记录是否开启第一次立即执行。
+    function debounce(fn, delay, immediate = false) {
+      let timer = null
+
+      // 用于记录是否调用过。
+      let isInvoked = false
+
+      const _debounce = function (...args) {
+        return new Promise((resolve, reject) => {
+          if (timer) clearTimeout(timer)
+
+          if (immediate && !isInvoked) {
+            const res = fn.apply(this.args)
+            // 传递函数的返回值。
+            resolve(res)
+            isInvoked = true
+            return
+          }
+
+          timer = setTimeout(() => {
+            const res = fn.apply(this, args)
+            resolve(res)
+            // 清空timer。将变量都置为初始状态。
+            timer = null
+            isInvoked = false
+          }, delay)
+        })
+      }
+
+      // 取消事件
+      _debounce.cancel = function () {
+        if (timer) clearTimeout(timer)
+        timer = null
+        isInvoked = false
+      }
+
+      return _debounce
+    }
+    /*********************************test******************************************/
+    const btn = document.querySelector('#btn')
+    const eventHandler = debounce(function () {
+      console.log(this)
+    }, 1000)
+
+
+    btn.addEventListener('click', eventHandler)
+
+    document.querySelector('#cancel').addEventListener('click', eventHandler.cancel)
+
+  </script>
+</body>
+
+</html>

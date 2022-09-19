@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const str = 'now time is 11:56, 12:00 have lunch, number 12345:432'
+
+    // 会匹配到12345:432中的数字。
+    console.log(str.match(/\d\d:\d\d/g))
+
+    // 因为设置了词边界，因此只会匹配到时间。
+    console.log(str.match(/\b\d\d:\d\d\b/g))
+
+  </script>
+</body>
+
+</html>

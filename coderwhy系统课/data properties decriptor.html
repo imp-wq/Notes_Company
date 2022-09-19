@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+        const obj = {
+            name: 'abc',
+            age: 18
+        }
+        // name以正常方式定义，通过defineProperty修改descriptor，因此其descriptor都按正常的来。
+        Object.defineProperty(obj, 'name', {
+            configurable: false,
+        })
+
+        // delete obj.name 报错
+
+        // address通过defineProperty定义，因此descriptor按defineProperty的默认值来。
+        Object.defineProperty(obj, 'address', {
+            value: 'xxx.xxx.xxx',
+        })
+
+        console.log(Object.keys(obj))
+        console.log(obj.address)
+
+
+    </script>
+</body>
+
+</html>
