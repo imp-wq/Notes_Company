@@ -8,6 +8,7 @@
 * release: `cargo build --release`, compile with optimizations, create in `target/release`. 
 * run: `cargo run`. 
 * check: `cargo check`, quickly checks code to make sure it compiles but doesn't produce a executable. 
+* doc: `cargo doc --open`, will build documentation provided by all of dependencies locally.
 
 ## guess game
 
@@ -32,7 +33,9 @@
 * Result value: an enumeration. variant: each possible state of an enumeration.
 
   * variants are `Ok` and `Err`.
-  * expect method: If this instance of `Result` is an `Ok` value, `expect` will take the return value that `Ok` is holding(`Ok`对应的值) and return just that value to you so you can use it.
+  * expect method:
+    *  If this instance of `Result` is an `Ok` value, `expect` will take the return value that `Ok` is holding(`Ok`对应的值) and return just that value to you so you can use it.
+    * if  `Result` is an `Err` variant, the `expect` call will crash the game and print the given message.
 
 * `println!` placeholders: use placeholder `{} ` to hold a value in place.
 
@@ -42,6 +45,8 @@
   ```
 
 ### Generate a secret number
+
+安装rand crate
 
 * crate: a collection of Rust source code files.
 
@@ -59,3 +64,69 @@
 * After updating the registry, Cargo downloads crates. Cargo also grabbed other crates that `rand` depends on to work. 
 
 * `Cargo.lock` file: 类似`package.lock.json.`，用于锁定版本的。
+
+使用rand crate
+
+```rust
+let secret_number = rand::thread_rng().gen_range(1..=100);
+```
+
+* `use rand::Rng`: The `Rng` trait defines methods that random number generators implement, this trait must be in scope to use those methods.
+* trait `rand::thread_rng`: This function gives the random number generator.
+* `gen_range`: method on the random number generator, takes **a range expression** as an argument and generates a random number in the range.
+  * range expression: `start...=end` , is inclusive on the lower and upper bounds([start, end]，包含上下边界)
+
+### Comparing the Guess to the Secret Number
+
+```rust
+ match guess.cmp(&secret_number) {
+     std::cmp::Ordering::Greater => println!("Too big!"),
+     std::cmp::Ordering::Less => println!("Too small!"),
+     std::cmp::Ordering::Equal => println!("You win!"),
+}
+```
+
+* enum type `std::cmp::Ordering`:
+
+  * varients: `Less`, `Greater`, `Equals`	Three outcomes that are possible when you compare two values.
+
+* `cmp` method: compares to values, can be called on anything that can be compared. 
+
+  * take a **reference** as an argument.
+  * return a variant of `Ordering` enum.
+  * use `match expression` to decide what to do next based on which varient of `Ordering` was returned.
+
+* `match` expression:  made up of `arms`.
+
+  Rust的分支判断语句
+
+  * arm: consists of a *pattern*, and the code should be run if the value given to `match` fits the pattern.
+
+* type system: 对于整数类型，有`i32`,`u32`,`i64`,`u64`等多种类型，默认为`i32`。
+
+
+
+convert String into a real number type:
+
+```rust
+let guess: u32 = guess.trim().parse().expect("Please type a number!");
+```
+
+* Shadowing: let us reuse the variable name, often used when you want to convert a value from one type to another type.
+
+* `trim` method on strings: eliminate the newline charactor of the String.
+
+  `read_line`方法在输入时会读入末尾的换行符。因此需要trim方法去掉该换行符。
+
+* `parse` method on a strings: converts a string to another type. Tell Rust the target type by using `let guess: u32`.
+
+  * If characters can't logically be converted into numbers, `parse` method will cause errors. 
+  * Because it might fail, the `parse` method returns a `Result` type.
+  * Treat this Result by using the `expect` method.
+
+### Allowing Multiple Gusses with Looping
+
+* `loop` keyword: creates an infinite loop.
+
+
+
