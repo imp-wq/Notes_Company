@@ -127,6 +127,18 @@ let guess: u32 = guess.trim().parse().expect("Please type a number!");
 ### Allowing Multiple Gusses with Looping
 
 * `loop` keyword: creates an infinite loop.
+* use `break` to exit the loop.
 
+### Handling Invalid Input
 
+```rust
+let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
+```
 
+* Switch from an `expect` call to a `match` expression to move from **crashing** on an error to **handling** the error.
+* `_`underscore: is a catchall value. In this example, we use underscore to match all `Err` values.
+* `continue`: tells the program to go to the next iteration of the `loop`.
+* 
