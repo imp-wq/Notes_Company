@@ -57,4 +57,34 @@
   * floating-point numbers
   * Booleans
   * characters
-* integers: a number without a fractional component（小数部分）.
+
+##### Integer Types
+
+​	a number without a fractional component（小数部分）.
+
+* Each variant be either signed or unsigned and has an explicit size.
+
+  `i32,u32`
+
+* `isize` and `usize`: depend on the architecture of the computer program is running on. 64 bits if running on a 64-bit architecture and 32-bits if running on a 32-bit architecture.
+
+*  Number literals that can be multiple numeric types allow a type suffix.
+
+* Can also use underscore`_` as a visual separator to make number easier to read, such as`1_000` is same as `1000`.
+
+* *Integer overflow* will cause programs to panic at runtime in debug mode, and cause *complement wrapping* in release mode with `--release` flag.
+
+#### Floating-Point Types
+
+* Two primitive types for *floating-point*  numbers: `f32` and `f64`. The default type is `f64`.
+
+#### Numeric Operations
+
+* addition
+* subtraction
+* multiplication
+* division: Integer division rounds down to the nearest integer.
+* remainder: `%`
+
+#### The Boolean Type
+
