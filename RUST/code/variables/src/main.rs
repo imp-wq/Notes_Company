@@ -16,4 +16,18 @@ fn main() {
 
     // the inner scope is over, the inner shadowing ends.
     println!("The value of x is: {x}");
+
+    let tup: (i32, bool, char) = (22, true, '哈');
+    let (x, y, z) = tup;
+    let x = tup.0;
+    let y = tup.1;
+    println!("{x},{y},{z}");
+
+    let a: [i32; 3] = [3, 4, 6];
+
+    another_function(22, '哈');
+}
+
+fn another_function(num: i32, c: char) {
+    println!("this is another function!{num},{c}");
 }
