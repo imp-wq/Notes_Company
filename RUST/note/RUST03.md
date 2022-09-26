@@ -88,3 +88,94 @@
 
 #### The Boolean Type
 
+
+
+---
+
+### 3.3 Functions
+
+#### Statements and Expressions
+
+* Statements: instructions  that perform some action and do not return a value.
+
+  ```rust
+  // let statement
+  let x = 5;
+  ```
+
+* Expressions: expressions evaluate to a resulting value.
+
+  Expression do not include ending semicolons. If you add a semicolon to the end of an expression, you turn it into a statement.
+
+  * calling a function
+
+  * calling a macro
+
+  * creating a new scope block with curly brackets
+
+    ```rust
+     let y = {
+            let x = 3;
+            x + 1
+        }; // is a block evaluates to 4
+    // y is 4
+    ```
+
+#### Functions with Return Values
+
+* We must declare return value's type after an arrow(->).
+
+* The return value of the function is synonymous with the value of the final expression in the block of the body of a function.
+
+  ```rust
+  fn getNumber() -> i32 {
+      222
+  }
+  ```
+
+#### Comments
+
+//
+
+### 3.4 Control Flow
+
+#### `if` Expressions
+
+​	An `if` expression allows you to branch  your code depending on conditions.
+
+* Blocks of the code associated with the conditions in `if` expressions are sometimes called arms.
+* if condition isn't a `bool`, we'll get an error.
+* Because `if` is an expression, we can use it on the right side of a `let` statement to assign the outcome to a variable.
+  * This means the values that have the potential to be results from each arm of the `if` must be the same type.
+  * If the types are mismatched, we'll get an error.
+  * Because variables must have a single type, and Rust needs to know at compile time what type the variable is.
+
+#### Repetition with Loops
+
+* Three kinds of loops: `loop`,`while`, and  `for`.
+
+  * `loop`: the loop keywords tell Rust to execute a block of code over and over again forever or until you explicitly tell it to stop.
+  * `while`: conditional loops with while.
+  * `for`: looping through a collection.
+    * use a `Range` with a `for` loop: generates all numbers in sequence starting from one number and ending before another number.  
+
+* `break`: to tell the program when to stop executing the loop.
+
+  * You can add the value you want returned after the `break` expression you use to stop the loop.
+
+    ```rust
+    let mut counter = 0;
+    let result = loop {
+        counter += 1;
+        if counter == 10 {
+            break counter * 2;
+        }
+    };
+    println!("The result is {result}");
+    ```
+
+* `continue`: to tell the program to skip over any remaining code in this iteration of the loop and go to the next iteration.
+
+* loop labels to disambiguate between multiple loops:
+
+  * loop labels must begin with a single quote.
