@@ -4,13 +4,15 @@
 
 * *Ownership* is a set of rules that governs how a Rust program manages memory.
 
-## Ownership rules
+## 4.1 What is Ownership?
+
+### Ownership rules
 
 * Each value in Rust has an *Owner*.
 * There can only be one owner at a time.
 * When the owner goes out of scope, the value will be dropped.
 
-## The String Type
+### The String Type
 
 * `String` type and string literal.
 
@@ -36,7 +38,7 @@
 
   <img src=".\note images\parts of a string.png"  />
 
-## Move
+### Move
 
 ```rust
 // move
@@ -52,9 +54,21 @@ let s2 = s1;
 
 * Rust will never automatically "deep" copies of your data.
 
-## Clone
+### Clone
 
 ​	*Clone* is a common method to deeply copy the heap data, not just the stack data.
 
-## Copy
+### Copy
 
+* `Copy` trait: if a type implements the `Copy` trait, variables that use it do not move, but rather are trivially copied, making them still valid after assignment to another variable.
+
+  * as a general rule, any group of simple scalar values can implement `Copy`.
+
+* 对于基本数据类型scalar types，赋值操作执行copy，原变量可以使用。
+
+  对于引用数据类型compound types, 赋值操作执行move，原变量所有权转移，不可再使用。
+
+### Ownership and Functions
+
+* The mechanics of passing a value to a function are similar to those when assigning a value to a variable.
+* 
