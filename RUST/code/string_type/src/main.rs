@@ -33,13 +33,13 @@ fn main() {
 
         // println!("{s}");
         println!("{x}");
-    }
 
-    fn takes_ownership(some_string: String) {
-        println!("{some_string}");
-    }
+        fn takes_ownership(some_string: String) {
+            println!("{some_string}");
+        }
 
-    fn makes_copy(some_integer: i32) {
-        println!("{}", some_integer);
+        fn makes_copy(some_integer: i32) {
+            println!("{}", some_integer);
+        }
     }
 }

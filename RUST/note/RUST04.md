@@ -71,4 +71,14 @@ let s2 = s1;
 ### Ownership and Functions
 
 * The mechanics of passing a value to a function are similar to those when assigning a value to a variable.
+
+### Return Values and Scope
+
+* Returning values can also transfer ownership.
+* Rust does let us return multiple values using a tuple.
+
+## 4.2 References and Borrowing
+
+* reference
+* ampersand `&`: ampersand represent *references*, they allow you to refer to some value without taking ownership of it.
 * 
