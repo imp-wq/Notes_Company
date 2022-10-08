@@ -187,3 +187,51 @@ maven坐标是资源的唯一标识。
   4. 服务终止：destroy
 
  
+
+---
+
+## cookie and session
+
+### session
+
+* session是基于cookie实现的。
+
+  * 服务端使用session后，Tomcat会将session id当作cookie发送给浏览器。
+
+  * 浏览器会通过cookie，将session id进行保存(`JSESSIONID`字段)，并在每次请求中将session id放入cookie发送给服务端。
+
+  * 服务端通过cookie接收到session id后，通过该id来保证相同id访问相同的session对象。
+
+    ```http
+    Cookie: JSESSIONID=AD66A2A75F5CAC5E7751084460E95B9F
+    ```
+
+* session的钝化和活化：
+
+  * 钝化：服务器如果正常关闭，Tomcat会自动将Session中的数据写入硬盘文件。
+  * 活化：再次启动服务器，可以从文件中加载Session数据。
+
+* session的销毁：
+
+  * 默认情况下，session会在30min自动销毁。
+
+    可以在session-config的session-timeout节点下配置session的失效时间。
+
+    ```xml
+    <session-config>
+        <session-timeout>100</session-timeout>
+    </session-config>
+    ```
+
+  * 调用session对象的invalidate方法，销毁该session对象。
+
+  * 浏览器关闭，session id也就随之销毁了，重新打开浏览器会生成新的session id。
+
+
+
+* 对比session与cookie：
+  * cookie存储在客户端，session存储在服务端。
+  * 因此相较于cookie，session更安全。
+  * cookie大小限制3kb，session无大小限制。
+  * cookie不占用服务器资源，session占用服务器资源。
+
