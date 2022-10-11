@@ -1,4 +1,4 @@
-package pojo;
+package com.itheima.pojo;
 
 public class Account {
     private int id;

@@ -1,7 +1,7 @@
 package com.itheima.jdbc;
 
+import com.itheima.pojo.Account;
 import org.junit.Test;
-import pojo.Account;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

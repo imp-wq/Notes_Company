@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JDBC-demo/JDBC-demo.iml" filepath="$PROJECT_DIR$/JDBC-demo/JDBC-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../MaBatis-demo/MaBatis-demo.iml" filepath="$PROJECT_DIR$/../MaBatis-demo/MaBatis-demo.iml" />
     </modules>
   </component>
 </project>

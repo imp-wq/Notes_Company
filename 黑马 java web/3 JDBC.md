@@ -182,7 +182,7 @@ Statement对象用于执行sql语句，根据sql语句不同的类型用不同�
         }
     ```
 
-`ctrl+alt+v`：相当于.var的快捷键。
+
 
 #### ResultSet
 
@@ -249,3 +249,64 @@ Statement对象用于执行sql语句，根据sql语句不同的类型用不同�
 ### PreparedStatement
 
 预编译SQL语句的对象，用于防止SQL注入。
+
+* sql注入演示 略
+
+* PreparedStatement的使用：
+
+  1. 从connect对象获取preparedStatement对象，获取对象时传入sql语句。
+
+  2. 传入的sql语句中用`?`来作为参数的占位符。
+
+  3. 通过preparedStatement对象的setXXX方法来设置参数
+
+     `setXXX(编号,参数值)`：XXX为参数类型，第一个参数为第几个`?`占位置，第二个参数为参数值。
+
+  4. 通过execute方法执行sql语句，此时无需传入sql语句。
+
+```java
+ @Test
+    public void testPrepared() throws Exception {
+        String url = "jdbc:mysql:///db_demo1?useSSL=false";
+        String username = "root";
+        String password = "mysql";
+
+        Connection conn = DriverManager.getConnection(url, username, password);
+
+        // 用户登录的用户名和密码。
+        String name = "zhangsan 123123";
+        String pwd = "' or '1' = '1";
+        String sql = "select * from tb_user where username=? and  password=?";
+
+        PreparedStatement preparedStatement = conn.prepareStatement(sql);
+        // 编号, 参数值
+        preparedStatement.setString(1, name);
+        preparedStatement.setString(2, pwd);
+
+        ResultSet resultSet = preparedStatement.executeQuery();
+        // 如果有数据，则代表登录成功，没有数据代表登录失败。
+        if (resultSet.next()) {
+            System.out.println("登录成功");
+        } else {
+            System.out.println("登录失败");
+        }
+
+        // 释放资源
+        resultSet.close();
+        preparedStatement.close();
+        conn.close();
+    }
+```
+
+* 原理：会对参数中所有特殊字符进行转义。
+
+#### 预编译
+
+* 通过在连接数据库时，url后拼接`useServerPrepStmts=true`键值对开启预编译功能。
+* 开启预编译后，创建PreparedStatement对象传入sql语句时会进行预编译，之后通过execute方法传入不同参数执行多次时，可以避免重复执行sql语句的检查和编译阶段。
+
+## IDEA使用
+
+`ctrl+alt+v`：相当于.var的快捷键。
+
+ctrl+shift+上/下：将代码上下移动

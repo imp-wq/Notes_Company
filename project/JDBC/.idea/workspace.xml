@@ -1,20 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="4f9e3fc0-505c-4439-a54c-8076425e11a8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_48.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JDBC-demo/JDBC-demo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JDBC-demo/lib/mysql-connector-java-5.1.48.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JDBC-demo/src/com/itheima/jdbc/JDBC4_Statement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JDBC-demo/src/com/itheima/jdbc/JDBC5_ResultSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JDBC-demo/src/com/itheima/jdbc/JDBC_Connection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JDBC-demo/src/com/itheima/jdbc/JDBC_Demo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JDBC-demo/src/pojo/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../黑马 java web/JDBC.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../黑马 java web/JDBC.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_46.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_5_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JDBC-demo/lib/druid-1.1.12.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JDBC-demo/src/com/itheima/druid.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JDBC-demo/src/com/itheima/druid/DruidDemo1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JDBC-demo/src/com/itheima/exercise/BrandExercise.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JDBC-demo/src/com/itheima/jdbc/JDBC6_UserLogin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JDBC-demo/src/com/itheima/jdbc/JDBC7_PreparedStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JDBC-demo/src/com/itheima/pojo/Brand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MaBatis-demo/MaBatis-demo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MaBatis-demo/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MaBatis-demo/src/main/java/com/itheima/MyBatisDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MaBatis-demo/src/main/java/com/itheima/pojo/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MaBatis-demo/src/main/resources/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MaBatis-demo/src/main/resources/logback.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MaBatis-demo/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JDBC-demo/JDBC-demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JDBC-demo/JDBC-demo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JDBC-demo/src/com/itheima/jdbc/JDBC5_ResultSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/JDBC-demo/src/com/itheima/jdbc/JDBC5_ResultSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JDBC-demo/src/pojo/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/JDBC-demo/src/com/itheima/pojo/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JDBC-demo/com/itheima/jdbc/JDBC5_ResultSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JDBC-demo/com/itheima/jdbc/JDBC5_ResultSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JDBC-demo/pojo/Account.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../黑马 java web/JDBC.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../黑马 java web/Tomcat.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../黑马 java web/数据库部分.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../黑马 java web/数据库高级部分.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +54,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Tag Library Descriptor" />
         <option value="Class" />
       </list>
     </option>
@@ -50,24 +81,30 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="17" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/JDBC-demo/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MaBatis-demo/src/main/resources" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\wzy\Note\project\MaBatis-demo\src\main\resources" />
+      <recent name="D:\wzy\Note\project\JDBC\JDBC-demo\src\com\itheima" />
+      <recent name="D:\wzy\Note\project\JDBC\JDBC-demo\src\com\itheima\jdbc" />
+      <recent name="D:\wzy\Note\project\JDBC\JDBC-demo\lib" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\wzy\Note\project\JDBC\JDBC-demo\lib" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.JDBC5_ResultSet.testResultSet">
-    <configuration name="JDBC_Connection" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.itheima.jdbc.JDBC_Connection" />
-      <module name="JDBC-demo" />
+  <component name="RunManager" selected="Application.MyBatisDemo">
+    <configuration name="MyBatisDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.itheima.MyBatisDemo" />
+      <module name="MaBatis-demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.itheima.jdbc.*" />
+          <option name="PATTERN" value="com.itheima.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -75,59 +112,76 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JDBC_Demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.itheima.jdbc.JDBC_Demo" />
-      <module name="JDBC-demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.itheima.jdbc.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JDBC4_Statement.testDML" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BrandExercise.testAdd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JDBC-demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.itheima.jdbc.*" />
+          <option name="PATTERN" value="com.itheima.exercise.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.itheima.jdbc" />
-      <option name="MAIN_CLASS_NAME" value="com.itheima.jdbc.JDBC4_Statement" />
-      <option name="METHOD_NAME" value="testDML" />
+      <option name="PACKAGE_NAME" value="com.itheima.exercise" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima.exercise.BrandExercise" />
+      <option name="METHOD_NAME" value="testAdd" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JDBC5_ResultSet.testResultSet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BrandExercise.testDeleteById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JDBC-demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.itheima.jdbc.*" />
+          <option name="PATTERN" value="com.itheima.exercise.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.itheima.jdbc" />
-      <option name="MAIN_CLASS_NAME" value="com.itheima.jdbc.JDBC5_ResultSet" />
-      <option name="METHOD_NAME" value="testResultSet" />
+      <option name="PACKAGE_NAME" value="com.itheima.exercise" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima.exercise.BrandExercise" />
+      <option name="METHOD_NAME" value="testDeleteById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BrandExercise.testSelectAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JDBC-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima.exercise.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.itheima.exercise" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima.exercise.BrandExercise" />
+      <option name="METHOD_NAME" value="testSelectAll" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BrandExercise.testUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JDBC-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima.exercise.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.itheima.exercise" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima.exercise.BrandExercise" />
+      <option name="METHOD_NAME" value="testUpdate" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -135,10 +189,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.JDBC5_ResultSet.testResultSet" />
-        <item itemvalue="JUnit.JDBC4_Statement.testDML" />
-        <item itemvalue="Application.JDBC_Connection" />
-        <item itemvalue="Application.JDBC_Demo" />
+        <item itemvalue="Application.MyBatisDemo" />
+        <item itemvalue="JUnit.BrandExercise.testDeleteById" />
+        <item itemvalue="JUnit.BrandExercise.testUpdate" />
+        <item itemvalue="JUnit.BrandExercise.testSelectAll" />
+        <item itemvalue="JUnit.BrandExercise.testAdd" />
       </list>
     </recent_temporary>
   </component>
@@ -152,6 +207,10 @@
       <updated>1665381977189</updated>
       <workItem from="1665381979060" duration="2552000" />
       <workItem from="1665390028329" duration="5690000" />
+      <workItem from="1665456926762" duration="11647000" />
+      <workItem from="1665479614925" duration="81000" />
+      <workItem from="1665479726168" duration="11000" />
+      <workItem from="1665479757997" duration="3698000" />
     </task>
     <servers />
   </component>
