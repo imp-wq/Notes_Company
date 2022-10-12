@@ -16,6 +16,21 @@
 
    [仓库服务 (aliyun.com)](https://developer.aliyun.com/mvn/guide)
 
+### maven项目结构
+
+* 根目录
+  * pom.xml：maven配置文件
+  * src
+    * main：源代码目录
+      * java：java源码目录
+      * resources：源码配置文件目录
+      * webapp：Web项目目录
+    * test：测试代码目录
+      * java：测试代码java源码目录
+      * resources：测试代码配置文件目录
+
+
+
 ### 常用命令
 
 maven命令需要在`pom.xml`文件所在的目录中运行。

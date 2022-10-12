@@ -8,6 +8,10 @@
       </list>
     </option>
   </component>
+  <component name="ProjectResources">
+    <resource url="https://mybatis.org/dtd/mybatis-3-config.dtd" location="$APPLICATION_HOME_DIR$/dtds/mybatis-3-config.dtd" />
+    <resource url="https://mybatis.org/dtd/mybatis-3-mapper.dtd" location="$APPLICATION_HOME_DIR$/dtds/mybatis-3-mapper.dtd" />
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>

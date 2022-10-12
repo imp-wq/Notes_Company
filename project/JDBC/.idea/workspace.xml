@@ -5,46 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f9e3fc0-505c-4439-a54c-8076425e11a8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_46.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_5_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JDBC-demo/lib/druid-1.1.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JDBC-demo/src/com/itheima/druid.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JDBC-demo/src/com/itheima/druid/DruidDemo1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JDBC-demo/src/com/itheima/exercise/BrandExercise.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JDBC-demo/src/com/itheima/jdbc/JDBC6_UserLogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JDBC-demo/src/com/itheima/jdbc/JDBC7_PreparedStatement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JDBC-demo/src/com/itheima/pojo/Brand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MaBatis-demo/MaBatis-demo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MaBatis-demo/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MaBatis-demo/src/main/java/com/itheima/MyBatisDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MaBatis-demo/src/main/java/com/itheima/pojo/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MaBatis-demo/src/main/resources/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MaBatis-demo/src/main/resources/logback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MaBatis-demo/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MaBatis-demo/src/main/java/com/itheima/MyBatisDemo2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MaBatis-demo/src/main/java/com/itheima/mapper/BrandMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MaBatis-demo/src/main/java/com/itheima/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MaBatis-demo/src/main/java/com/itheima/pojo/Brand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MaBatis-demo/src/main/resources/com/itheima/mapper/BrandMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MaBatis-demo/src/test/java/com/itheima/test/MyBatisTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JDBC-demo/JDBC-demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JDBC-demo/JDBC-demo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JDBC-demo/src/com/itheima/jdbc/JDBC5_ResultSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/JDBC-demo/src/com/itheima/jdbc/JDBC5_ResultSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JDBC-demo/src/pojo/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/JDBC-demo/src/com/itheima/pojo/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JDBC-demo/com/itheima/jdbc/JDBC5_ResultSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JDBC-demo/com/itheima/jdbc/JDBC5_ResultSet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JDBC-demo/pojo/Account.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../黑马 java web/JDBC.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../黑马 java web/Tomcat.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../黑马 java web/数据库部分.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../黑马 java web/数据库高级部分.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MaBatis-demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MaBatis-demo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MaBatis-demo/src/main/resources/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MaBatis-demo/src/main/resources/com/itheima/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MaBatis-demo/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MaBatis-demo/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MaBatis-demo/target/classes/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MaBatis-demo/target/classes/com/itheima/MyBatisDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MaBatis-demo/target/classes/com/itheima/MyBatisDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MaBatis-demo/target/classes/com/itheima/pojo/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MaBatis-demo/target/classes/com/itheima/pojo/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MaBatis-demo/target/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MaBatis-demo/target/classes/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../黑马 java web/5 Maven&amp;Tomcat.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../黑马 java web/5 Maven&amp;Tomcat.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../黑马 java web/6.MyBatis.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../黑马 java web/6.MyBatis.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,11 +35,20 @@
       <list>
         <option value="Tag Library Descriptor" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="2FvoZmwZiBcP3eYo5lwP6wqNp7a" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -71,6 +59,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
@@ -81,26 +70,31 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="17" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MaBatis-demo/src/main/resources" />
+    <property name="last_opened_file_path" value="$APPLICATION_HOME_DIR$/dtds/mybatis-3-mapper.dtd" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.General" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\wzy\Note\project\MaBatis-demo\src\main\resources\com\itheima\mapper" />
+      <recent name="D:\wzy\Note\project\MaBatis-demo\src\main\java\com\itheima\pojo" />
       <recent name="D:\wzy\Note\project\MaBatis-demo\src\main\resources" />
       <recent name="D:\wzy\Note\project\JDBC\JDBC-demo\src\com\itheima" />
       <recent name="D:\wzy\Note\project\JDBC\JDBC-demo\src\com\itheima\jdbc" />
-      <recent name="D:\wzy\Note\project\JDBC\JDBC-demo\lib" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\wzy\Note\project\MaBatis-demo\src\main\resources\com\itheima\mapper" />
       <recent name="D:\wzy\Note\project\JDBC\JDBC-demo\lib" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.itheima" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.MyBatisDemo">
-    <configuration name="MyBatisDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.itheima.MyBatisDemo" />
+  <component name="RunManager" selected="JUnit.MyBatisTest.testSelectBySingleCondition">
+    <configuration name="MyBatisDemo2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.itheima.MyBatisDemo2" />
       <module name="MaBatis-demo" />
       <extension name="coverage">
         <pattern>
@@ -123,65 +117,65 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BrandExercise.testAdd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JDBC-demo" />
+    <configuration name="MyBatisTest.testSelectAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MaBatis-demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.itheima.exercise.*" />
+          <option name="PATTERN" value="com.itheima.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.itheima.exercise" />
-      <option name="MAIN_CLASS_NAME" value="com.itheima.exercise.BrandExercise" />
-      <option name="METHOD_NAME" value="testAdd" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BrandExercise.testDeleteById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JDBC-demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.itheima.exercise.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.itheima.exercise" />
-      <option name="MAIN_CLASS_NAME" value="com.itheima.exercise.BrandExercise" />
-      <option name="METHOD_NAME" value="testDeleteById" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BrandExercise.testSelectAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JDBC-demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.itheima.exercise.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.itheima.exercise" />
-      <option name="MAIN_CLASS_NAME" value="com.itheima.exercise.BrandExercise" />
+      <option name="PACKAGE_NAME" value="com.itheima.test" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima.test.MyBatisTest" />
       <option name="METHOD_NAME" value="testSelectAll" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BrandExercise.testUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JDBC-demo" />
+    <configuration name="MyBatisTest.testSelectByCondition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MaBatis-demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.itheima.exercise.*" />
+          <option name="PATTERN" value="com.itheima.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.itheima.exercise" />
-      <option name="MAIN_CLASS_NAME" value="com.itheima.exercise.BrandExercise" />
-      <option name="METHOD_NAME" value="testUpdate" />
+      <option name="PACKAGE_NAME" value="com.itheima.test" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima.test.MyBatisTest" />
+      <option name="METHOD_NAME" value="testSelectByCondition" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyBatisTest.testSelectById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MaBatis-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.itheima.test" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima.test.MyBatisTest" />
+      <option name="METHOD_NAME" value="testSelectById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyBatisTest.testSelectBySingleCondition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MaBatis-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.itheima.test" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima.test.MyBatisTest" />
+      <option name="METHOD_NAME" value="testSelectBySingleCondition" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -189,11 +183,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MyBatisDemo" />
-        <item itemvalue="JUnit.BrandExercise.testDeleteById" />
-        <item itemvalue="JUnit.BrandExercise.testUpdate" />
-        <item itemvalue="JUnit.BrandExercise.testSelectAll" />
-        <item itemvalue="JUnit.BrandExercise.testAdd" />
+        <item itemvalue="JUnit.MyBatisTest.testSelectBySingleCondition" />
+        <item itemvalue="JUnit.MyBatisTest.testSelectByCondition" />
+        <item itemvalue="JUnit.MyBatisTest.testSelectById" />
+        <item itemvalue="JUnit.MyBatisTest.testSelectAll" />
+        <item itemvalue="Application.MyBatisDemo2" />
       </list>
     </recent_temporary>
   </component>
@@ -211,6 +205,8 @@
       <workItem from="1665479614925" duration="81000" />
       <workItem from="1665479726168" duration="11000" />
       <workItem from="1665479757997" duration="3698000" />
+      <workItem from="1665540892250" duration="8861000" />
+      <workItem from="1665554736713" duration="11047000" />
     </task>
     <servers />
   </component>
@@ -228,5 +224,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
