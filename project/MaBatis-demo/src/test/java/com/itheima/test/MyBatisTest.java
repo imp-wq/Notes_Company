@@ -103,9 +103,9 @@ public class MyBatisTest {
 
         // 封装参数对象
         Brand brand = new Brand();
-        // brand.setStatus(status);
-        // brand.setCompanyName(companyName);
-        // brand.setBrandName(brandName);
+        //brand.setStatus(status);
+        brand.setCompanyName(companyName);
+        brand.setBrandName(brandName);
 
         String resource = "mybatis-config.xml";
         InputStream inputStream = Resources.getResourceAsStream(resource);
@@ -119,6 +119,40 @@ public class MyBatisTest {
         List<Brand> brands = brandMapper.selectBySingleCondition(brand);
 
         System.out.println(brands);
+
+        sqlSession.close();
+    }
+
+    @Test
+    public void testAdd() throws Exception {
+        int status = 1;
+        String companyName = "菠萝手机";
+        String brandName = "菠萝";
+        String description = "手机中的战斗机";
+        int ordered = 100;
+
+        // 封装参数对象
+        Brand brand = new Brand();
+        brand.setStatus(status);
+        brand.setCompanyName(companyName);
+        brand.setBrandName(brandName);
+        brand.setDescription(description);
+        brand.setOrdered(ordered);
+
+        String resource = "mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+
+        BrandMapper brandMapper = sqlSession.getMapper(BrandMapper.class);
+
+        // 以对象形式传入参数，参数名与sql中变量对应
+        brandMapper.add(brand);
+        // 获取主键
+        System.out.println("id为：" + brand.getId());
+        // 需要手动提交事务
+        sqlSession.commit();
 
         sqlSession.close();
     }
