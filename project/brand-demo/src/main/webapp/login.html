@@ -9,7 +9,7 @@
 
 <body>
     <div id="loginDiv" style="height: 350px">
-        <form action="javascript:;" method="post" id="form">
+        <form action="javascript:;" method="get" id="form">
             <h1 id="loginMsg">LOGIN IN</h1>
             <div id="errorMsg">用户名或密码不正确</div>
             <p>Username:<input id="username" name="username" type="text"></p>
@@ -35,10 +35,12 @@
         const { username, password } = inputs
 
         btn.addEventListener('click', () => {
-            axios.post('/brand-demo/loginServlet', {
-                username: username.value,
-                password: password.value
-            }).then(res => console.log(res))
+            axios.post('/brand-demo/loginServlet',
+                {
+                    username: username.value,
+                    password: password.value
+                }
+            ).then(res => console.log(res))
         })
     </script>
 </body>
