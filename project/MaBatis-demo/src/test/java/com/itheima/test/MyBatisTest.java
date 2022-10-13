@@ -156,4 +156,40 @@ public class MyBatisTest {
 
         sqlSession.close();
     }
+
+    @Test
+    public void testUpdate() throws Exception {
+        int status = 1;
+        String companyName = "菠萝手机";
+        String brandName = "菠萝";
+        String description = "菠萝手机,手机中的战斗机";
+        int ordered = 200;
+        int id = 5;
+
+        // 封装参数对象
+        Brand brand = new Brand();
+        brand.setStatus(status);
+        brand.setCompanyName(companyName);
+        brand.setBrandName(brandName);
+        brand.setDescription(description);
+        brand.setOrdered(ordered);
+        brand.setId(id);
+
+        String resource = "mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+
+        BrandMapper brandMapper = sqlSession.getMapper(BrandMapper.class);
+
+        // 以对象形式传入参数，参数名与sql中变量对应
+        int count = brandMapper.update(brand);
+        // 获取主键
+        System.out.println("count为：" + count);
+        // 需要手动提交事务
+        sqlSession.commit();
+
+        sqlSession.close();
+    }
 }

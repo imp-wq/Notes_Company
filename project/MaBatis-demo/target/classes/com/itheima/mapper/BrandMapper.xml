@@ -88,4 +88,9 @@
         insert into tb_brand (brand_name, company_name, ordered, description, status)
         values (#{brandName}, #{companyName}, #{ordered}, #{description}, #{status});
     </insert>
+
+    <update id="update">
+        update tb_brand set brand_name=#{brandName},company_name=#{companyName},ordered=#{ordered},status=#{status},description=#{description}
+where id=#{id};
+    </update>
 </mapper>
