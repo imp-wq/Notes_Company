@@ -19,3 +19,26 @@
 ##  异步 AJAX
 
 * 异步指，browser发起ajax请求时，无需等待服务端。
+
+## JSON
+
+Javascript Object Notation，网络传输中的数据载体。
+
+* JSON与java对象的相互转换。
+
+jackson库
+
+### FastJson库
+
+阿里巴巴的，用于将java对象转换为json
+
+```java
+// 1.java对象转化为json
+String jsonString = JSON.toJSONString(user);
+System.out.println(jsonString);
+
+// 2.JSON字符串转java对象
+User user1 = JSON.parseObject("{\"id\":1,\"password\":\"1234\",\"username\":\"zhangsan\"}", User.class);
+System.out.println(user1);
+```
+
