@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="MaBatis-demo" />
+        <module name="request-demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="MaBatis-demo" target="16" />
+      <module name="MaBatis-demo" target="1.8" />
+      <module name="request-demo" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

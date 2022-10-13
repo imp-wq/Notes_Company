@@ -159,20 +159,20 @@ public class MyBatisTest {
 
     @Test
     public void testUpdate() throws Exception {
-        int status = 1;
+        int status = 0;
         String companyName = "菠萝手机";
         String brandName = "菠萝";
         String description = "菠萝手机,手机中的战斗机";
         int ordered = 200;
-        int id = 5;
+        int id = 4;
 
         // 封装参数对象
         Brand brand = new Brand();
         brand.setStatus(status);
-        brand.setCompanyName(companyName);
-        brand.setBrandName(brandName);
-        brand.setDescription(description);
-        brand.setOrdered(ordered);
+        // brand.setCompanyName(companyName);
+        // brand.setBrandName(brandName);
+        // brand.setDescription(description);
+        // brand.setOrdered(ordered);
         brand.setId(id);
 
         String resource = "mybatis-config.xml";
@@ -187,6 +187,46 @@ public class MyBatisTest {
         int count = brandMapper.update(brand);
         // 获取主键
         System.out.println("count为：" + count);
+        // 需要手动提交事务
+        sqlSession.commit();
+
+        sqlSession.close();
+    }
+
+    @Test
+    public void testDeleteById() throws Exception {
+        int id = 5;
+
+        String resource = "mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+
+        BrandMapper brandMapper = sqlSession.getMapper(BrandMapper.class);
+
+        // 传入id
+        brandMapper.deleteById(id);
+        // 需要手动提交事务
+        sqlSession.commit();
+
+        sqlSession.close();
+    }
+
+    @Test
+    public void testDeleteByIds() throws Exception {
+        int[] ids = {7, 8};
+
+        String resource = "mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+
+        BrandMapper brandMapper = sqlSession.getMapper(BrandMapper.class);
+
+        // 传入id
+        brandMapper.deleteByIds(ids);
         // 需要手动提交事务
         sqlSession.commit();
 

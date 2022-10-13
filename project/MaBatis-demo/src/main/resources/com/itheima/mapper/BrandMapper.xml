@@ -14,11 +14,11 @@
         select *
         from tb_brand;
     </select>
-    <select id="selectById" resultMap="brandResultMap">
-        select *
-        from tb_brand
-        where id = #{id};
-    </select>
+    <!--<select id="selectById" resultMap="brandResultMap">-->
+    <!--    select *-->
+    <!--    from tb_brand-->
+    <!--    where id = #{id};-->
+    <!--</select>-->
 
     <!--  条件查询  -->
     <!--<select id="selectByCondition" resultMap="brandResultMap">-->
@@ -72,13 +72,16 @@
         <where>
             <choose>
                 <when test="status != null">
-                    status = ${status}
+                    status =
+                    ${status}
                 </when>
                 <when test="companyName != null and companyName != ''">
-                    company_name like #{companyName}
+                    company_name like
+                    #{companyName}
                 </when>
                 <when test="brandName != null and companyName != ''">
-                    brand_name like #{brandName};
+                    brand_name like
+                    #{brandName};
                 </when>
             </choose>
         </where>
@@ -90,7 +93,38 @@
     </insert>
 
     <update id="update">
-        update tb_brand set brand_name=#{brandName},company_name=#{companyName},ordered=#{ordered},status=#{status},description=#{description}
-where id=#{id};
+        update tb_brand
+        <set>
+            <if test="companyName != null and companyName != ''">
+                company_name=#{companyName},
+            </if>
+            <if test="brandName != null and companyName != ''">
+                brand_name=#{brandName},
+            </if>
+            <if test="ordered != null">
+                ordered=#{ordered},
+            </if>
+            <if test="description != null and description != ''">
+                description=#{description},
+            </if>
+            <if test="status != null">
+                status=#{status},
+            </if>
+        </set>
+        where id = #{id};
     </update>
+
+    <delete id="deleteById">
+        delete
+        from tb_brand
+        where id = #{id};
+    </delete>
+
+    <delete id="deleteByIds">
+        delete from tb_brand where id in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+
 </mapper>

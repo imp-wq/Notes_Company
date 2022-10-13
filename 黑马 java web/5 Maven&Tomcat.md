@@ -250,3 +250,51 @@ maven坐标是资源的唯一标识。
   * cookie大小限制3kb，session无大小限制。
   * cookie不占用服务器资源，session占用服务器资源。
 
+## 路径问题
+
+* 浏览器使用路径：需要加虚拟目录，即项目访问路径。
+
+  如：
+
+  * redirect，可以通过`request.getContextPath()+请求url`拼接来动态获取url。
+  * html 标签，如a，form等
+
+* 服务器端使用路径：无需加虚拟目录。
+
+  如：
+
+  * 请求转发
+
+* 虚拟目录地址可以在pom.xml中，通过configuration标签下的path标签进行配置。
+
+## 登录案例
+
+* 在mybatis与servlet配合使用时，应保证sqlSessionFactory类只创建一次。
+
+  因为每个sqlSessionFactory对象都绑定一个连接池，创建多个会造成资源的浪费。
+
+* 解决方案：将获取sqlSessionFactory的方法封装到一个工具类的静态代码块中。
+
+```java
+public class SqlSessionFactoryUtils {
+    private static SqlSessionFactory sqlSessionFactory;
+
+    // 通过工具类的静态代码块，保证sqlSessionFactory只获取一次。
+    static {
+        String resource = "mybatis-config.xml";
+        InputStream inputStream = null;
+        try {
+            inputStream = Resources.getResourceAsStream(resource);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        sqlSessionFactory =
+                new SqlSessionFactoryBuilder().build(inputStream);
+    }
+
+    public static SqlSessionFactory getSqlSessionFactory() {
+        return sqlSessionFactory;
+    }
+}
+```
+
