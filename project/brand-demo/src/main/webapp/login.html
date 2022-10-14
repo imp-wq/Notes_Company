@@ -8,23 +8,37 @@
 </head>
 
 <body>
-<div id="loginDiv" style="height: 350px">
-    <form action="/brand-demo/loginServlet" method="get" id="form">
-        <h1 id="loginMsg">LOGIN IN</h1>
-        <div id="errorMsg">用户名或密码不正确</div>
-        <p>Username:<input id="username" name="username" type="text"></p>
+    <div id="loginDiv" style="height: 350px">
+        <form action="/brand-demo/loginServlet" method="post" id="form">
+            <h1 id="loginMsg">LOGIN IN</h1>
+            <div id="errorMsg">用户名或密码不正确</div>
+            <p>Username:<input id="username" name="username" type="text" value="123123"></p>
 
-        <p>Password:<input id="password" name="password" type="password"></p>
-        <p>Remember:<input id="remember" name="remember" type="checkbox"></p>
-        <div id="subDiv">
-            <input type="submit" class="button" value="login up">
-            <input type=" reset" class="button" value="reset">&nbsp;&nbsp;&nbsp;
-            <a href="register.html">没有账号？</a>
-        </div>
-    </form>
-</div>
+            <p>Password:<input id="password" name="password" type="password"></p>
+            <p>Remember:<input id="remember" name="remember" type="checkbox"></p>
+            <div id="subDiv">
+                <input type="submit" class="button" value="login up">
+                <input type=" reset" class="button" value="reset">&nbsp;&nbsp;&nbsp;
+                <a href="register.html">没有账号？</a>
+            </div>
+        </form>
+    </div>
 
-<!--<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>-->
+    <!--<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>-->
+    <script>
+        // const cookie = document.cookie
+        const cookie = 'username=zhangsan; password=123'
+        const cookieObj = {}
+        cookie && cookie.split(';').map(str => str.split('=')).forEach(([key, value]) => {
+            cookieObj[key.trim()] = value
+        })
+        console.log(cookieObj)
+        const usernameDOM = document.querySelector('#username')
+        const passwordDOM = document.querySelector('#password')
+        usernameDOM.value = cookieObj['username'] ?? ''
+        passwordDOM.value = cookieObj['password'] ?? ''
+
+    </script>
 </body>
 
 </html>
