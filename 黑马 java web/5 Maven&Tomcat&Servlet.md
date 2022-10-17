@@ -115,6 +115,18 @@ maven坐标是资源的唯一标识。
 
     * import：等maven高级了再讲。
 
+### 控制maven输出版本
+
+```xml
+ <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+```
+
+
+
 ## Tomcat
 
 ### 配置文件

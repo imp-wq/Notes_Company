@@ -6,7 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Spring-2-bean_life_cycle" />
         <module name="brand-demo" />
+        <module name="Spring-3-autowired" />
         <module name="Filter-demo" />
       </profile>
     </annotationProcessing>

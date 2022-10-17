@@ -3,12 +3,18 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/brand-demo" />
+    <file type="web" url="file://$PROJECT_DIR$/Spring-1-bean" />
+    <file type="web" url="file://$PROJECT_DIR$/Spring-2-bean_life_cycle" />
+    <file type="web" url="file://$PROJECT_DIR$/Spring-3-autowired" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/brand-demo/pom.xml" />
         <option value="$PROJECT_DIR$/Filter-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-2-bean_life_cycle/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-3-autowired/pom.xml" />
       </list>
     </option>
   </component>

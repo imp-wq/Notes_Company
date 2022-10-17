@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="bookDao" class="com.itniuma.dao.impl.BookDaoImpl">
+        <!--setter注入-->
+        <!--<property name="connectionNum" value="233"/>-->
+        <!--<property name="databaseName" value="mysql"/>-->
+
+        <!--  构造器注入  -->
+        <constructor-arg name="connectionNum" value="666"/>
+        <constructor-arg name="databaseName" value="MySQL"/>
+
+    </bean>
+</beans>

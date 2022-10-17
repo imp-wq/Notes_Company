@@ -1,4 +1,4 @@
-# Filter
+## Filter
 
 过滤器，web三大组件（Servlet，Filter，Listener）之一。
 
@@ -42,3 +42,62 @@ public void doFilter(ServletRequest servletRequest, ServletResponse servletRespo
 * 过滤器的顺序：默认情况下，按过滤器类名的字符串默认排序。
 
 ### 过滤器登录验证
+
+* 登陆后将用户存储在session中。
+* 请求需要权限的资源时，从session中取出user对象。
+  * 如果为null，则代表未登录，请求失败，跳转到登录页面。
+  * 如果成功取出user对象，则代表已登录，允许访问资源。
+* 放行登录、注册、验证码等相关逻辑：
+  * 通过注册一个urls白名单，判断请求的url是否属于白名单内容，进行放行。
+
+```java
+@WebFilter("/*") // 注解：拦截所有资源 
+
+@Override
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+        HttpServletRequest req = (HttpServletRequest) servletRequest;
+
+        // 放行登录和注册相关的资源
+        // 定义相关资源的白名单，html/css等静态资源，相关servlet
+        String[] urls = {"/login.html", "/imgs/", "/css/", "/loginServlet", "/register.html", "registerServlet", "checkCodeServlet"};
+        String url = req.getRequestURL().toString();
+        for (String u : urls) {
+            // 判断访问的url，是否在白名单中
+            if (url.contains(u)) {
+                // 放行
+                filterChain.doFilter(servletRequest, servletResponse);
+                return;
+            }
+        }
+
+        HttpSession session = req.getSession();
+        Object user = session.getAttribute("user");
+        if (user != null) {
+            // 登录成功，放行
+            filterChain.doFilter(servletRequest, servletResponse);
+        } else {
+            // 登录失败，使用请求转发，跳转至登录界面
+            req.setAttribute("login_msg", "您尚未登录！");
+            req.getRequestDispatcher("/login.html").forward(servletRequest, servletResponse);
+        }
+
+    }
+```
+
+## Listner
+
+监听器，是java web三大组件之一，现在用的并不多。
+
+* 可以监听application, session, request这三个对象的创建、销毁、set/get attribute事件，从而自动执行某些代码逻辑。
+* 共有8个监听器：
+  * ServletContext监听：
+    * ServletContextListener：创建、销毁的监听
+    * ServletContextAttributeListener：属性增删改的监听
+  * Session监听：
+    * HttpSessionListener
+    * HttpSessionAttributeListener
+    * HttpSessionBindingListener：监听对于Session的绑定和解除
+    * HttpSessionActivationListener：监听对于session数据的钝化和活化
+  * Request监听：
+    * ServletRequestListener
+    * ServletRequestAttributeListener

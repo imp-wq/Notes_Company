@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--直接通过bean创建对象-->
+    <bean id="bookDao" class="com.itniuma.dao.impl.BookDaoImpl"/>
+
+    <!--通过setXXX为bean注入依赖-->
+    <bean id="bookService" name="service bookEbi;service2" class="com.itniuma.service.impl.BookServiceImpl">
+        <property name="bookDao" ref="bookDao"/>
+    </bean>
+
+    <!--通过静态工厂创建bean对象-->
+    <bean id="bookDaoFromFactory" class="com.itniuma.factory.BookDaoFactory" factory-method="getBookDao"/>
+
+    <!--通过实例工厂创建bean对象-->
+    <bean id="bookInstanceFactory" class="com.itniuma.factory.BookDaoInstanceFactory"/>
+    <bean id="bookDaoFromInstanceFactory" factory-bean="bookInstanceFactory" factory-method="getBookDao"/>
+
+    <!--  通过FactoryBean实例化bean  -->
+    <bean id="bookDaoFromFactoryBean" class="com.itniuma.factory.BookDaoFactoryBean"/>
+</beans>
