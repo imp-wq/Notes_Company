@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--管理Druid DataSource对象-->
+    <!--<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">-->
+    <!--    &lt;!&ndash;驱动类名&ndash;&gt;-->
+    <!--    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>-->
+    <!--    <property name="url" value="jdbc:mysql:///mybatis&amp;useSSL=false"/>-->
+    <!--    <property name="username" value="root"/>-->
+    <!--    <property name="password" value="mysql"/>-->
+    <!--</bean>-->
+
+    <!--  读取properties管理druid  -->
+    <!--<context:property-placeholder location="druid.properties" system-properties-mode="NEVER"/>-->
+    <context:property-placeholder location="classpath:*.properties" system-properties-mode="NEVER"/>
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${druid.driver}"/>
+        <property name="url" value="${druid.url}"/>
+        <property name="username" value="${druid.username}"/>
+        <property name="password" value="${druid.password}"/>
+    </bean>
+</beans>

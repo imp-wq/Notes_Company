@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean class="com.itniuma.dao.impl.BookDaoImpl">
+        <property name="arr">
+            <array>
+                <value>123</value>
+                <value>321</value>
+                <value>333</value>
+            </array>
+        </property>
+        <property name="myList">
+            <list>
+                <value>abc</value>
+                <value>cba</value>
+                <value>nba</value>
+            </list>
+        </property>
+        <property name="mySet">
+            <set>
+                <value>abc</value>
+                <value>abc</value>
+                <value>cba</value>
+                <value>nba</value>
+            </set>
+        </property>
+        <property name="myMap">
+            <map>
+                <entry key="name" value="kobe"/>
+                <entry key="friend" value="james"/>
+                <entry key="hobby" value="sport"/>
+            </map>
+        </property>
+        <property name="myProperties">
+            <props>
+                <prop key="name">kobe</prop>
+                <prop key="hobby">jame</prop>
+                <prop key="friend">jame</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="bookService" class="com.itniuma.service.impl.BookServiceImpl" autowire="byType"/>
+</beans>

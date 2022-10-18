@@ -15,6 +15,10 @@
         <option value="$PROJECT_DIR$/Spring/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-2-bean_life_cycle/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-3-autowired/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-4-collection/pom.xml" />
+        <option value="$PROJECT_DIR$/Sprint-5-manageDruid/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-6-annotation_bean/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-7-Spring_and_MyBatis/pom.xml" />
       </list>
     </option>
   </component>

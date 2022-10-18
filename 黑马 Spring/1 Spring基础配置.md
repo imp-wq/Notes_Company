@@ -348,7 +348,7 @@ public class BookDaoImpl implements BookDao {
 
 ### 自动装配
 
-在bean中使用autowired attribute进行自动装配。
+在bean中使用autowire attribute进行自动装配。
 
 * 在java中，bean类提供相应的setter。
 
@@ -366,9 +366,9 @@ public class BookDaoImpl implements BookDao {
   }
   ```
 
-* 在xml文件中，设置`autowired="装配方式"`，会自动获取需要的bean，进行装配。
+* 在xml文件中，设置`autowire="装配方式"`，会自动获取需要的bean，进行装配。
 
-  如果`autowired="byType"`，则被装配的bean无需配置id。
+  如果`autowire="byType"`，则被装配的bean无需配置id。
 
 * 自动装配无法用于装配简单类型，只能用于引用类型。
 
@@ -381,4 +381,160 @@ public class BookDaoImpl implements BookDao {
 * 使用最多的是`autowired="byType"`，类型不能重复。
 
 * 自动装配优先级低于构造器注入和setter注入，如果配置了构造器注入和setter注入，自动装配失效。
+
+## 集合注入
+
+对bean中的集合类型进行setter注入：
+
+* 集合类型：
+  * List
+  * Set
+  * Map
+  * Properties
+* 就是格式不一样而已，使用方法大体相同。
+* 通过value标签指定简单类型，通过ref标签指定引用类型，使用bean attribute指定类名。
+
+```xml
+<bean class="com.itniuma.dao.impl.BookDaoImpl">
+    <property name="arr">
+        <array>
+            <value>123</value>
+            <value>321</value>
+            <value>333</value>
+        </array>
+    </property>
+    <property name="myList">
+        <list>
+            <value>abc</value>
+            <value>cba</value>
+            <value>nba</value>
+        </list>
+    </property>
+    <property name="mySet">
+        <set>
+            <value>abc</value>
+            <value>abc</value>
+            <value>cba</value>
+            <value>nba</value>
+        </set>
+    </property>
+    <property name="myMap">
+        <map>
+            <entry key="name" value="kobe"/>
+            <entry key="friend" value="james"/>
+            <entry key="hobby" value="sport"/>
+        </map>
+    </property>
+    <property name="myProperties">
+        <props>
+            <prop key="name">kobe</prop>
+            <prop key="hobby">jame</prop>
+            <prop key="friend">jame</prop>
+        </props>
+    </property>
+</bean>
+```
+
+## 案例：druid对象管理
+
+* 以druid为案例，学习使用bean管理第三方对象。
+
+* 使用constructor注入还是setter注入，需要查阅。
+
+  ```xml
+  <!--管理Druid DataSource对象-->
+  <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+      <!--驱动类名-->
+      <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+      <property name="url" value="jdbc:mysql:///mybatis&amp;useSSL=false"/>
+      <property name="username" value="root"/>
+      <property name="password" value="mysql"/>
+  </bean>
+  ```
+
+## 加载Properties文件
+
+对于一些第三方类的配置，比如数据库，应当把用户名、密码、url等写在外部properties中再进行加载。
+
+1. 在xml文件开头的beans标签中，开启context命名空间。
+
+   ```xml
+   <beans xmlns="http://www.springframework.org/schema/beans"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:context="http://www.springframework.org/schema/context"
+          xsi:schemaLocation="
+          http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+          http://www.springframework.org/schema/context/spring-context.xsd">
+   ```
+
+2. 使用context空间加载properties文件。
+
+   * 可以通过`system-properties-mode="NEVER"`不加载系统环境变量，避免一些properties与系统变量冲突，比如username。
+   * 通过location attribute指定加载的文件：
+     * 可以用`,`分隔，加载多个文件。
+     * 可以通过`*.properties`导入目录中的所有properties文件
+     * 标准格式，导入当前工程中的（不包括jar包）的所有properties文件：`location="classpath:*.properties"`
+     * 加载当前工程中及jar包中的所有properties文件：`location="classpath*:*.properties"`
+
+   ```xml
+   <!--  读取properties管理druid  -->
+   <!--<context:property-placeholder location="druid.properties" system-properties-mode="NEVER"/>-->
+   <context:property-placeholder location="classpath:*.properties" system-properties-mode="NEVER"/>
+   ```
+
+3. 使用properties文件：通过属性占位符`${key}`，使用properties文件中的值。
+
+   ```xml
+   <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+       <property name="driverClassName" value="${druid.driver}"/>
+       <property name="url" value="${druid.url}"/>
+       <property name="username" value="${druid.username}"/>
+       <property name="password" value="${druid.password}"/>
+   </bean>
+   ```
+
+   ```properties
+   druid.driver=com.mysql.jdbc.Driver
+   druid.url=jdbc:mysql:///mybatis&amp;useSSL=false
+   druid.username=root
+   druid.password=mysql
+   ```
+
+## 容器
+
+* application context对象也可以使用文件系统从applicationContext.xml文件中加载，`FileSystemXmlApplicationContext`类。
+
+  文件系统默认从工程目录开始查找，而不是resource目录，因此一般不会这么用。
+
+* 直接加载bean为对应类型，而不是Object类型：
+
+  * 通过`getBean("名称",类型)`重载，从第二个参数传入bean的Class对象。
+
+  * 直接通过`getBean(类型)`传入bean的Class对象，按类型查找，这种方式要求bean的类型唯一。
+
+    ```java
+    ClassPathXmlApplicationContext container = new
+        // 获取bean的几种方式
+        // Object类型
+        // BookService bookService = (BookService) container.getBean("bookService");
+    
+        // id，类型
+        // BookService bookService = container.getBean("bookService", BookService.class);
+        // 直接按类型查找
+        BookService bookService = container.getBean(BookService.class);
+    ```
+
+* xml文件中，可以通过bean标签的lazy-init attribute控制是否延迟加载。默认立即加载。
+
+* 容器的接口与实现类：
+
+  * BeanFactory是容器的顶层接口。
+
+  * ApplicationContext：Spring核心接口，初始化bean时立即加载。
+
+    提供基础的bean相关方法，通过其他接口扩展功能。
+
+  * ClassPathXmlApplicationContext：常用初始化类，提供一些关闭、注册关闭钩子等操作的方法。
 
