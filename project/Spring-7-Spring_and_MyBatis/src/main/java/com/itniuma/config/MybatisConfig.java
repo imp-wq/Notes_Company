@@ -12,7 +12,7 @@ public class MybatisConfig {
     public SqlSessionFactoryBean sqlSessionFactory(DataSource dataSource) {
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
 
-        // 设置typealias，用于给mybatis对应的java类起别名的。
+        // 设置typealias，设置MyBatis对应的java类，以及用于给mybatis对应的java类起别名的。
         sqlSessionFactoryBean.setTypeAliasesPackage("com.itniuma.domain");
         // 以形参形式传入dataSource，自动装配，注入jdbc dataSource对象，即driver, url, username, password。
         sqlSessionFactoryBean.setDataSource(dataSource);

@@ -167,6 +167,12 @@
 
 ### 第三方bean的管理 @Bean
 
+[Bean (Spring Framework 5.3.23 API)](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/Bean.html)
+
+>## Annotation Type Bean
+>
+>Indicates that a method produces a bean to be managed by the Spring container.
+
 * 第三方bean的管理，创建独立的配置类，定义一个方法，加上`@Bean`注解，返回第三方bean对象，在该方法中set该bean对象的字段。
 
 * 在SpringConfig配置类中，加载配置类：

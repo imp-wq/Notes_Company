@@ -10,6 +10,7 @@
         <module name="Spring-4-collection" />
         <module name="Spring-7-Spring_and_MyBatis" />
         <module name="brand-demo" />
+        <module name="Spring-8-dynamic_proxy" />
         <module name="Spring-3-autowired" />
         <module name="Filter-demo" />
       </profile>
