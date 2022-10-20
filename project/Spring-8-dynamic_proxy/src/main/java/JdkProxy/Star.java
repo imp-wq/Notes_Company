@@ -1,3 +1,5 @@
+package JdkProxy;
+
 public class Star implements Skill {
 
     private String name;

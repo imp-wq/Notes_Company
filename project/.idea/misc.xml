@@ -20,6 +20,7 @@
         <option value="$PROJECT_DIR$/Spring-6-annotation_bean/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-7-Spring_and_MyBatis/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-8-dynamic_proxy/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-9-AOP_primary/pom.xml" />
       </list>
     </option>
   </component>

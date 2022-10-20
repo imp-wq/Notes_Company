@@ -1,5 +1,4 @@
-import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
+package JdkProxy;
 
 public class Test {
     public static void main(String[] args) {

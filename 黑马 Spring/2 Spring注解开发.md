@@ -58,11 +58,13 @@
     <context:component-scan base-package="com.itniuma"/>
     ```
 
-* java代码中通过`AnnotationConfigApplicationContext`指定配置类来创建容器。
+* java代码中通过`AnnotationConfigApplicationContext`指定配置类SpringConfig来创建容器。
 
   ```java
   ApplicationContext container = new AnnotationConfigApplicationContext(SpringConfig.class);
+  
   BookDao bookDao = container.getBean(BookDao.class);
+  
   bookDao.save();
   ```
 
