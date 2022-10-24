@@ -4,7 +4,13 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/1SpringMVC/01_quick_start" />
     <file type="web" url="file://$PROJECT_DIR$/1SpringMVC/02_bean_load" />
+<<<<<<< HEAD
     <file type="web" url="file://$PROJECT_DIR$/1SpringMVC/SpringMVC-03_request_paramaters" />
+=======
+    <file type="web" url="file://$PROJECT_DIR$/1SpringMVC/springmvc_03_rest_case" />
+    <file type="web" url="file://$PROJECT_DIR$/1SpringMVC/springmvc_04_ssm" />
+    <file type="web" url="file://$PROJECT_DIR$/1SpringMVC/springmvc_05_ssm-case" />
+>>>>>>> 5c642aead196bad257d274ea4887862f617f3e32
     <file type="web" url="file://$PROJECT_DIR$/brand-demo" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-1-bean" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-2-bean_life_cycle" />
@@ -28,7 +34,14 @@
         <option value="$PROJECT_DIR$/SpringMVC/untitled/pom.xml" />
         <option value="$PROJECT_DIR$/SpringMVC/SpringMVC-01_quick_start/pom.xml" />
         <option value="$PROJECT_DIR$/1SpringMVC/02_bean_load/pom.xml" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/1SpringMVC/SpringMVC-03_request_paramaters/pom.xml" />
+=======
+        <option value="$PROJECT_DIR$/../../SSM资料/01-spring/day03/代码/spring/springmvc_03_rest_case/pom.xml" />
+        <option value="$PROJECT_DIR$/1SpringMVC/springmvc_03_rest_case/pom.xml" />
+        <option value="$PROJECT_DIR$/1SpringMVC/springmvc_04_ssm/springmvc_04_ssm/pom.xml" />
+        <option value="$PROJECT_DIR$/1SpringMVC/springmvc_05_ssm-case/pom.xml" />
+>>>>>>> 5c642aead196bad257d274ea4887862f617f3e32
       </list>
     </option>
   </component>

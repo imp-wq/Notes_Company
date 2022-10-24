@@ -6,17 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Spring-2-bean_life_cycle" />
+        <module name="springmvc_03_rest_case" />
+        <module name="springmvc_04_ssm" />
         <module name="Spring-4-collection" />
+        <module name="springmvc_05_ssm-case" />
         <module name="Spring-7-Spring_and_MyBatis" />
-        <module name="Spring-9-AOP_primary" />
         <module name="brand-demo" />
+        <module name="Spring-3-autowired" />
+        <module name="Filter-demo" />
+        <module name="Spring-2-bean_life_cycle" />
+        <module name="Spring-9-AOP_primary" />
         <module name="Spring-8-dynamic_proxy" />
         <module name="SpringMVC-03_request_paramaters" />
         <module name="02_bean_load" />
-        <module name="Spring-3-autowired" />
         <module name="Spring-10-spring_transaction" />
-        <module name="Filter-demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
