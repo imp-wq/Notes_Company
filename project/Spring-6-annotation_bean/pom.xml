@@ -8,9 +8,6 @@
     <artifactId>Spring-6-annotation_bean</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>Spring-7-Spring_and_MyBatis</module>
-    </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

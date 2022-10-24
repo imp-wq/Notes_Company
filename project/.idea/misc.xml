@@ -4,6 +4,7 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/1SpringMVC/01_quick_start" />
     <file type="web" url="file://$PROJECT_DIR$/1SpringMVC/02_bean_load" />
+    <file type="web" url="file://$PROJECT_DIR$/1SpringMVC/SpringMVC-03_request_paramaters" />
     <file type="web" url="file://$PROJECT_DIR$/brand-demo" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-1-bean" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-2-bean_life_cycle" />
@@ -27,6 +28,7 @@
         <option value="$PROJECT_DIR$/SpringMVC/untitled/pom.xml" />
         <option value="$PROJECT_DIR$/SpringMVC/SpringMVC-01_quick_start/pom.xml" />
         <option value="$PROJECT_DIR$/1SpringMVC/02_bean_load/pom.xml" />
+        <option value="$PROJECT_DIR$/1SpringMVC/SpringMVC-03_request_paramaters/pom.xml" />
       </list>
     </option>
   </component>

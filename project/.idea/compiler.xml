@@ -12,6 +12,7 @@
         <module name="Spring-9-AOP_primary" />
         <module name="brand-demo" />
         <module name="Spring-8-dynamic_proxy" />
+        <module name="SpringMVC-03_request_paramaters" />
         <module name="02_bean_load" />
         <module name="Spring-3-autowired" />
         <module name="Spring-10-spring_transaction" />
