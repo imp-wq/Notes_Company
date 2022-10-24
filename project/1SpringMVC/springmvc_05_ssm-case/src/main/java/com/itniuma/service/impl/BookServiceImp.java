@@ -1,2 +1,6 @@
-package com.itniuma.service.impl;public class BookServiceImp {
+package com.itniuma.service.impl;
+
+import com.itniuma.service.BookService;
+
+public class BookServiceImp implements BookService {
 }

@@ -2,23 +2,26 @@ package com.itniuma.controller;
 
 import com.itniuma.domain.Book;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
-@ResponseBody
-@RequestMapping("/user")
-public class UserController {
+// 使用resful开发
 
-    @RequestMapping(method = RequestMethod.POST)
+// @Controller
+// @ResponseBody
+@RestController
+@RequestMapping("/book")
+public class BookController {
+
+    // @RequestMapping(method = RequestMethod.POST)
+    @GetMapping
+    @PostMapping
     public String save(Book book) {
         System.out.println("book save...");
         return "save success!";
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    // @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @DeleteMapping("/{id}")
     public String delete(@PathVariable Integer id) {
         System.out.println("delete" + id);
         return "delete" + id;

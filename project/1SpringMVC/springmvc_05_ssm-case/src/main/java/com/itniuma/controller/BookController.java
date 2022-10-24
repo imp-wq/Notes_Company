@@ -1,2 +1,4 @@
-package com.itniuma.controller;public class BookController {
+package com.itniuma.controller;
+
+public class BookController {
 }
