@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="SpringMVC-03_request_paramaters" />
+        <module name="springmvc_05_ssm-case" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="SpringMVC-01_quick_start" target="1.8" />
+      <module name="springmvc_05_ssm-case" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
