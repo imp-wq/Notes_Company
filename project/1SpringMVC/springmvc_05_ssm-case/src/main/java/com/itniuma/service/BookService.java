@@ -1,8 +1,51 @@
 package com.itniuma.service;
 
-import java.awt.print.Book;
+import com.itniuma.domain.Book;
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 public interface BookService {
+    /**
+     * save a book
+     *
+     * @param book
+     * @return
+     */
+    boolean save(com.itniuma.domain.Book book);
 
+    /**
+     * update a book
+     *
+     * @param book
+     * @return
+     */
+    boolean update(com.itniuma.domain.Book book);
+
+    /**
+     * delte a book by id
+     *
+     * @param id
+     * @return
+     */
+    boolean delete(Integer id);
+
+    /**
+     * get a book info by id
+     *
+     * @param id
+     * @return
+     */
+    Book getById(Integer id);
+
+    /**
+     * get all book info
+     *
+     * @return
+     */
+    List<Book> getAll();
 }

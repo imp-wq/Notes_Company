@@ -1,42 +1,44 @@
 package com.itniuma.controller;
 
+import com.itniuma.domain.Book;
+import com.itniuma.service.BookService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/books")
 public class BookController {
-    private Integer id;
-    private String type;
-    private String name;
-    private String description;
+    private BookService bookService;
 
-    public Integer getId() {
-        return id;
+    @Autowired
+    public void setBookService(BookService bookService) {
+        this.bookService = bookService;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    @PostMapping
+    public boolean save(@RequestBody Book book) {
+        return bookService.save(book);
     }
 
-    public String getType() {
-        return type;
+    @PutMapping
+    public boolean update(@RequestBody Book book) {
+        return bookService.update(book);
     }
 
-    public void setType(String type) {
-        this.type = type;
+    @DeleteMapping("/{id}")
+    public boolean delete(@PathVariable Integer id) {
+        return bookService.delete(id);
     }
 
-    public String getName() {
-        return name;
+    @GetMapping("/{id}")
+    public Book getById(@PathVariable Integer id) {
+        return bookService.getById(id);
     }
 
-    public void setName(String name) {
-        this.name = name;
+    @GetMapping
+    public List<Book> getAll() {
+        return bookService.getAll();
     }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-
 }

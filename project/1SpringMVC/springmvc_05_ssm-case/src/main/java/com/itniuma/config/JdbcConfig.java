@@ -22,12 +22,12 @@ public class JdbcConfig {
         this.url = url;
     }
 
-    @Value("jdbc.username")
+    @Value("${jdbc.username}")
     public void setUsername(String username) {
         this.username = username;
     }
 
-    @Value("jdbc.password")
+    @Value("${jdbc.password}")
     public void setPassword(String password) {
         this.password = password;
     }
