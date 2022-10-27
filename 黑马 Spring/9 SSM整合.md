@@ -11,10 +11,24 @@
 * 设置spring扫描bean的包，dao层和service层
 * 导入JdbcConfig和MyBatisConfig配置类
 * 读取jdbc.properties文件
+* 开启jdbc事务，`@EnableTransactionManagement`
 
 #### JdbcConfig
 
 * 根据jdbc.properties用的信息获取数据源。
+
+* 设置jdbc transaction manager
+
+  ```java
+  @Bean
+  public PlatformTransactionManager transactionManager(DataSource dataSource) {
+      DataSourceTransactionManager transactionManager = new DataSourceTransactionManager();
+      transactionManager.setDataSource(dataSource);
+      return transactionManager;
+  }
+  ```
+
+  
 
 #### MyBatisConfig
 
@@ -41,6 +55,19 @@
 * 设置扫描controller包
 * @EnableWebMvc，设置开启一些对请求和响应进行转换的功能。
 
+### Service Interface
+
+* `@Transactional`,开启事务。
+* @Service注解只能加载实现类上，加在接口上会报错。
+
+### Controller
+
+* @RestController，@RequestMapping，设置bean和，处理请求和响应。
+
+### Dao Interface
+
+* 只有接口，没有实现类，通过mabatis注解开发。
+
 ## 测试
 
 * 一般在2个环节需要进行测试：
@@ -48,4 +75,4 @@
   1. 在业务层接口开发完后，使用junit进行测试。
   2. 表现层接口开发完后，使用postman进行表现层接口测试。
 
-  
+
