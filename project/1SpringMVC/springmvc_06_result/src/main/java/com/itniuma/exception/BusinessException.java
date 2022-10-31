@@ -1,9 +1,9 @@
 package com.itniuma.exception;
 
-public class SystemException extends RuntimeException {
+public class BusinessException extends RuntimeException {
     private Integer code;
 
-    public SystemException(Integer code) {
+    public BusinessException(Integer code) {
         this.code = code;
     }
 
@@ -15,12 +15,12 @@ public class SystemException extends RuntimeException {
         this.code = code;
     }
 
-    public SystemException(String message, Integer code) {
+    public BusinessException(Integer code, String message) {
         super(message);
         this.code = code;
     }
 
-    public SystemException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace, Integer code) {
+    public BusinessException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace, Integer code) {
         super(message, cause, enableSuppression, writableStackTrace);
         this.code = code;
     }
