@@ -1,0 +1,7 @@
+xyglrs	现有隔离人数
+drqzrs	隔离点当日确诊人数
+ljglrs	累计隔离人数
+drjcrs	当日解除隔离人数
+dqcqwjcrs	当前超期未解除隔离人数
+ljjcglrs	累计解除隔离人数
+gxsj	更新时间

@@ -1,0 +1,36 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\yarn\bin\yarn.js init
+
+PATH: 
+  D:\wzy\Program Files\python\Scripts\;D:\wzy\Program Files\python\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\wzy\Program Files\Microsoft VS Code\bin;D:\wzy\Program Files\nvm;C:\Program Files\nodejs;D:\wzy\Git\cmd;C:\Users\Administrator\AppData\Local\Yarn\Data\global\node_modules\.bin;D:\wzy\Program Files\微信web开发者工具\dll;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\dotnet\;C:\Users\Administrator\.cargo\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;c:\program files\esafenet\cobra docguard client;D:\wzy\Program Files\nvm;C:\Program Files\nodejs;D:\wzy\Program Files\IntelliJ IDEA Community Edition 2022.1.4\bin;D:\wzy\Program Files\Fiddler;D:\wzy\Program Files\IntelliJ IDEA 2021.1.1\bin;;D:\wzy\apache-maven-3.6.1\bin;C:\Users\Administrator\.dotnet\tools
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.16.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: canceled
+      at Interface.<anonymous> (D:\wzy\Program Files\nvm\v16.16.0\node_modules\yarn\lib\cli.js:137150:13)
+      at Interface.emit (node:events:527:28)
+      at Interface._ttyWrite (node:readline:1081:16)
+      at ReadStream.onkeypress (node:readline:288:10)
+      at ReadStream.emit (node:events:527:28)
+      at emitKeys (node:internal/readline/utils:358:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (node:internal/readline/emitKeypressEvents:61:36)
+      at ReadStream.emit (node:events:527:28)
+      at addChunk (node:internal/streams/readable:315:12)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
