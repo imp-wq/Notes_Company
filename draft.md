@@ -5,3 +5,16 @@ resident resident resident resident resident accreditation accreditation accredi
 accreditation loyalty loyalty interpretation interpretation accreditation accreditation adjacent hospitable hospitable interpretation magnitude magnitude pavement popularize resident technician 
 ```
 
+```
+contingency contingency contingency sponsor sponsor frequnently frequently exhibitions exhibition exhibition exhibition exhibition journal 	stain stain stain bleach bleach stain stain soaking
+gullibly gullibly gullibly 
+an adaptation for children 
+an adaptation for children 
+compel compel expire expire
+solidify solidify noticeable noticeable rivalry rivalry predispose predispose predispose
+inhabitant inhabitant damp climate damp climate
+excavation excavation excavation truimphant truimphat dispose predispose predispose predispose
+excavation excavation triumphant thriumphant apace
+apace 
+```
+
