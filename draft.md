@@ -18,3 +18,8 @@ excavation excavation triumphant thriumphant apace
 apace 
 ```
 
+```
+simultaneous diagnose enforce overlap lexical dangle error->errorneously disregard recap
+contiguous
+```
+

@@ -81,4 +81,55 @@ let s2 = s1;
 
 * reference
 * ampersand `&`: ampersand represent *references*, they allow you to refer to some value without taking ownership of it.
-* 
+* When functions have references as parameters instead of the actual values, we won't need to return the values in order to give back ownership, because we never had ownership.
+* We call the action of creating a reference *borrowing*.
+* References are immutable by default, so we're not allowed to modify something we have a reference to.
+
+### Mutable References
+
+* we change `s` to be `mut`.
+* we create a mutable reference with `&mut s`  .
+* function accept a mutable reference with `some_string: &mut String`.
+* One big restriction of mutable references: if you have a mutable reference to a value, you can have no other references to that value.
+* The benefit of having this restriction is that Rust can prevent data races at compile time.
+* Rust enforces a similar rule for combining mutable and immutable references. That's means we also cannot have a mutable reference while we have an immutable one to the same value.
+
+```rust
+println!("---reference and borrowing---");
+let mut s = String::from("hello");
+change(&mut s);
+println!("{s}");
+fn change(some_string: &mut String) {
+    some_string.push_str(", world");
+}
+```
+
+* A reference's scope starts from where it is introduced and continues through the last time that reference is used.
+* Non-Lexical Lifetimes: NLL, the ability of the compiler to tell that a reference is no longer being used at a point before the end of the scope.
+
+#### data race
+
+* A data race happens when these three behaviors occur:
+  * Two or three pointers access the same data at the same time.
+  * At least one of the pointers is being used to write to the data.
+  * There is no mechanism being used to synchronize access to the data.
+* We can use curly brackets to create a new scope, allowing for multiple mutable references, just not simultaneous ones.
+
+### Dangle References
+
+>In languages with pointers, it’s easy to erroneously create a *dangling pointer*--a pointer that references a location in memory that may have been given to someone else--by freeing some memory while preserving a pointer to that memory. 
+
+* We shouldn't return a reference to a `String` in functions.
+* `s` is created inside `dangle`, when the code of `dangle` is finished, `s` will be deallocated, `&s` would be pointing to an invalid `String`.
+
+```rust
+let reference_to_nothing = dangle();
+fn dangle() -> &String {
+    let s = String::from("hello");
+    &s; // error! 
+    // this function's return type contains a borrowed value, but there is no value for it to be borrowed from
+}
+```
+
+
+
