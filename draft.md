@@ -1,8 +1,49 @@
+### 11.14
+
+* sketch
+
+* figma
+
+* pnpm
+
+  
+
+```
+prerequisite autonomous
+unwary towel envelope twine
+passage: 文章 走廊
+brush up
+```
+
+
+
+### 11.11
+
+```
+respondent modish modish stipulate stipulate intrinsic intrinsic intrinsic hazardous
+```
+
+
+
+### 11.10
+
+```
+simultaneous diagnose enforce overlap lexical dangle error->errorneously disregard recap
+contiguous separate tedious brittle trail->trailing number 
+on no account
+by the same token
+signify truncate
+deref coercions
+compare and contrast
+```
+
+### draft
+
 ```
 texture texture tensile tensile tensile magnitude magnitude magnitude magnitude
 magnitude hospitable doctoral doctoral doctoral doctoral afflict afflict afflict afflict afflict afflict technician technician technician adjacent adjacent adjacent adjacent
 resident resident resident resident resident accreditation accreditation accreditation loyalty loyalty loyalty loyalty occupy interpretation interpretation doctoral doctoral afflict technician adjacent adjacent resident resident  accredatation accreditation 
-accreditation loyalty loyalty interpretation interpretation accreditation accreditation adjacent hospitable hospitable interpretation magnitude magnitude pavement popularize resident technician 
+accreditation loyalty loyalty interpretation interpretation accreditation accreditation adjacent hospitable hospitable interpretation magnitude magnitude pavement popularize resident technician luxuries
 ```
 
 ```
@@ -16,22 +57,7 @@ inhabitant inhabitant damp climate damp climate
 excavation excavation excavation truimphant truimphat dispose predispose predispose predispose
 excavation excavation triumphant thriumphant apace
 apace 
-```
-
-note:
-
-```
-simultaneous diagnose enforce overlap lexical dangle error->errorneously disregard recap
-contiguous separate tedious brittle trail->trailing number 
-on no account
-by the same token
-signify truncate
-deref coercions
-compare and contrast
-```
-
-```
-respondent modish modish stipulate stipulate intrinsic intrinsic intrinsic hazardous
+separate separate separate groan groan fundamental fundamental
 ```
 
 
