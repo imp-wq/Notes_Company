@@ -18,8 +18,21 @@ excavation excavation triumphant thriumphant apace
 apace 
 ```
 
+note:
+
 ```
 simultaneous diagnose enforce overlap lexical dangle error->errorneously disregard recap
-contiguous
+contiguous separate tedious brittle trail->trailing number 
+on no account
+by the same token
+signify truncate
+deref coercions
+compare and contrast
 ```
+
+```
+respondent modish modish stipulate stipulate intrinsic intrinsic intrinsic hazardous
+```
+
+
 

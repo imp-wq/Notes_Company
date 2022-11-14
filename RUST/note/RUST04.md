@@ -131,5 +131,82 @@ fn dangle() -> &String {
 }
 ```
 
+## 4.3 The Slice Type
+
+* problems:
+
+### String Slices
+
+A string slices is a reference to part of a `String`.
+
+* `[starting_index...ending_index]`
+
+* `starting_index` is the first position in the slice and `ending_slice` is one more than the last position in the slice.
+
+* the length of the slice =(corresponds to) ending_index minus starting_index
+
+  ```rust
+  {
+      let s = String::from("hello, world!");
+      let hello = &s[0..5];
+      println!("s is: {}; hello is: {}", s, hello);
+  }
+  ```
+
+* `..`: Rust's range syntax, two periods.
+
+  * If you want to start at index 0, you can drop the value before the two periods.
+
+    these are equal:
+
+    ```rust
+    let hello = &s[0..5];
+    let hello = &s[..5];
+    ```
+
+  * By the same token, if your slice includes the last byte of the String, you can drop the trailing number.
+
+    these are equal:
+
+    ```rust
+    let world = &s[7..s.len()];
+    let world = &s[7..];
+    ```
+
+* The type that signifies "string slice" is written as `&str`:
+
+  * borrowing rules: if we have an immutable references to something, we cannot also take a mutable reference.
+  * `clear` needs to truncate the String, so it needs to get a mutable reference.
+  * `word` is an immutable reference, and the `println!` after the call to `clear` uses the reference in `word`, so it must still be active at that point.
+
+  ```java
+  let mut s = String::from("hello,world");
+  let word = first_word(&s);
+  // s.clear(); error! mutable borrow occurs here!
+  println!("the first word is: {word}");
+  
+  fn first_word(s: &String) -> &str {
+      let bytes = s.as_bytes();
+  
+      for (index, &item) in bytes.iter().enumerate() {
+          if item == b' ' {
+              return &s[..index];
+          }
+      }
+      &s[..]
+  }
+  ```
+
+### String  Literals Are Slices
+
+### String Slices as Parameters
+
+* We can write the signature like this. It allows us to use the same function on both `&String` values and `&str` values.
+* deref coercions
+
+```rust
+fn first_word(s: &str) -> &str {
+```
+
 
 
