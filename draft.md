@@ -1,3 +1,13 @@
+### 11.15
+
+```
+a universal xxx..., part with, verbose or redundant
+concrete values
+idle
+```
+
+
+
 ### 11.14
 
 * sketch
@@ -57,7 +67,8 @@ inhabitant inhabitant damp climate damp climate
 excavation excavation excavation truimphant truimphat dispose predispose predispose predispose
 excavation excavation triumphant thriumphant apace
 apace 
-separate separate separate groan groan fundamental fundamental
+separate separate separate groan groan fundamental fundamental catastrophe catastrophe catastrophe
+catastrophe catastrophe catastrophe catastrophe catastrophe
 ```
 
 
