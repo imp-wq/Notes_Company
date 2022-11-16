@@ -1,6 +1,6 @@
 # 05 Using Structs to Structure Related Data
 
-### 5.1 Defining and Instantiating Structs
+## 5.1 Defining and Instantiating Structs
 
 * define a struct:
 
@@ -51,5 +51,47 @@ println!("index 1 of black: {}", black.1);
 * unit-like structs don't have any fields, and they behave similarly to `()`, the unit type.
 * it's useful in trait.
 
+## 5.2 An Example Program Using Structs
+
+```rust
+println!(
+    "The area of the rectangle is {} square pixels",
+    area(&Rectangle {
+        width: 10,
+        height: 20
+    })
+);
+
+// the parameter is an immutable borrow
+fn area(rec: &Rectangle) -> i32 {
+    rec.width * rec.height
+}
+```
+
+### Adding Useful Functionality with Derived Traits
+
+* `{?:}` & `#[derived(Debug)]`
+* `dbg!` macro
+
+## 5.3 Method Syntax
+
+### Defining Methods
+
+* We define methods in an `impl` (implementation) block for the struct.
+
+* Methods must have a parameter named `self` of type `Self` for their first parameter, and `&self` is short for `self:Self`.
+
+  Note that we still need to use `&` in front of the `self` shorthand to indicate this method do not take the ownership of `self`.
+
+### Methods with More Parameters
 
 
+
+
+
+## Language
+
+* This way, `main` **retains** its ownerships ...
+* The `area` function **accesses** the `width` and `height` fields of the `Rectangle` instance.
+
+* abbreviate, ergonomic

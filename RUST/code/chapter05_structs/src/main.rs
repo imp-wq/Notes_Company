@@ -1,3 +1,11 @@
+/*
+ * @Author: wuzhenyang
+ * @Date: 2022-11-15 10:30:50
+ * @LastEditors: wuzhenyang
+ * @LastEditTime: 2022-11-16 17:40:43
+ * @FilePath: \code\chapter05_structs\src\main.rs
+ * @Description:
+ */
 fn main() {
     struct User {
         username: String,
@@ -46,17 +54,51 @@ fn main() {
         println!("---calculate the area of a rectangle---");
 
         struct Rectangle {
-            width:i32;
-            height:i32;
+            width: i32,
+            height: i32,
         }
 
-        println!("The area of the rectangle is {} square pixels", area(&Rectangle{
-            width:10,height:20
-        }) ); 
+        println!(
+            "The area of the rectangle is {} square pixels",
+            area(&Rectangle {
+                width: 10,
+                height: 20
+            })
+        );
 
-
-        fn area(rec:&Rectangle) -> i32{
+        // the parameter is an immutable borrow
+        fn area(rec: &Rectangle) -> i32 {
             rec.width * rec.height
+        }
+    }
+    {
+        // print a struct
+        #[derive(Debug)]
+        struct Rectangle {
+            width: i32,
+            height: i32,
+        }
+        println!("------");
+        let rect1 = Rectangle {
+            width: 30,
+            height: 50,
+        };
+        println!("{:?}", rect1);
+        dbg!(&rect1);
+    }
+
+    {
+        // method syntax
+        println!("---method syntax---");
+        #[derive(Debug)]
+        struct Rectangle {
+            width: u32,
+            height: u32,
+        }
+        impl Rectangle {
+            fn area(&self) -> u32 {
+                self.width * self.height
+            }
         }
     }
 }

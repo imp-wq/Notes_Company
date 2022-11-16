@@ -1,3 +1,18 @@
+### 11.16
+
+* 在家学学基本的unity，看看有什么英文文档。
+
+  unity hub如何云同步
+
+```
+prevalence prevelent
+et cetera
+versus, retain, descriptive, hilarious, explicitly, respectively, shorthand, designate
+I got the job on the strength of your recommendation.
+```
+
+
+
 ### 11.15
 
 ```
@@ -5,8 +20,6 @@ a universal xxx..., part with, verbose or redundant
 concrete values
 idle
 ```
-
-
 
 ### 11.14
 
@@ -68,7 +81,8 @@ excavation excavation excavation truimphant truimphat dispose predispose predisp
 excavation excavation triumphant thriumphant apace
 apace 
 separate separate separate groan groan fundamental fundamental catastrophe catastrophe catastrophe
-catastrophe catastrophe catastrophe catastrophe catastrophe
+catastrophe catastrophe catastrophe catastrophe catastrophe cassette cassette cassette cassette spectacular spectacular spectacular catastrophe catastrophe appetite appetite
+prevalent prevalence incinerate incinerate incinerate 
 ```
 
 
