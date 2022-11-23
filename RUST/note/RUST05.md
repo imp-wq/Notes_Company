@@ -85,9 +85,14 @@ fn area(rec: &Rectangle) -> i32 {
 
 ### Methods with More Parameters
 
+### Associated Functions
 
 
 
+## Some questions
+
+* what's the differences between string literal and String ?
+* What will happen if we declare a function with an ordinary parameter but give it a reference when calling it ?
 
 ## Language
 

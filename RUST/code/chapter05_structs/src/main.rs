@@ -2,7 +2,7 @@
  * @Author: wuzhenyang
  * @Date: 2022-11-15 10:30:50
  * @LastEditors: wuzhenyang
- * @LastEditTime: 2022-11-16 17:40:43
+ * @LastEditTime: 2022-11-23 17:10:22
  * @FilePath: \code\chapter05_structs\src\main.rs
  * @Description:
  */
@@ -100,5 +100,12 @@ fn main() {
                 self.width * self.height
             }
         }
+
+        let rect1 = Rectangle {
+            width: 5,
+            height: 6,
+        };
+
+        println!("{}", Rectangle::area(&rect1))
     }
 }

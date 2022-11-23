@@ -1,3 +1,20 @@
+### 11.23
+
+* 加强听力练习，加强精听和阅读。
+* 如果可以的话，单词可以用扇贝单词进行补足。
+
+```
+indulge, ratio, mortgage, groceries, distress, recreation, outline, deceive, 
+
+You are in for a big surprise.
+Stay in touch with friends and family members.
+Setting aside time for activities that you enjoy.
+```
+
+
+
+
+
 ### 11.21
 
 ```
@@ -97,7 +114,7 @@ solidify solidify noticeable noticeable rivalry rivalry predispose predispose pr
 inhabitant inhabitant damp climate damp climate
 excavation excavation excavation truimphant truimphat dispose predispose predispose predispose
 excavation excavation triumphant thriumphant apace
-apace 
+apace exacerbate
 separate separate separate groan groan fundamental fundamental catastrophe catastrophe catastrophe
 catastrophe catastrophe catastrophe catastrophe catastrophe cassette cassette cassette cassette spectacular spectacular spectacular catastrophe catastrophe appetite appetite
 prevalent prevalence incinerate incinerate incinerate 
