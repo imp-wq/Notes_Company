@@ -1,3 +1,14 @@
+### 11.24
+
+```
+distant, comprise, competent, illuminate, ingenious， rational, steer, tobacco, campaign
+```
+
+* par for the course in academia: 在学术界是常有的事。
+* 
+
+
+
 ### 11.23
 
 * 加强听力练习，加强精听和阅读。

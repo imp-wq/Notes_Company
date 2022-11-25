@@ -1,9 +1,1 @@
-/*
- * @Author: wuzhenyang
- * @Date: 2022-11-02 16:18:39
- * @LastEditors: wuzhenyang
- * @LastEditTime: 2022-11-02 16:18:44
- * @FilePath: \tsnode-tools\src\db-tool\map_array.js
- * @Description: 
- */
-[{ "prop": "xyglrs", "label": "现有隔离人数" }, { "prop": "drqzrs", "label": "隔离点当日确诊人数" }, { "prop": "ljglrs", "label": "累计隔离人数" }, { "prop": "drjcrs", "label": "当日解除隔离人数" }, { "prop": "dqcqwjcrs", "label": "当前超期未解除隔离人数" }, { "prop": "ljjcglrs", "label": "累计解除隔离人数" }, { "prop": "gxsj", "label": "更新时间" }, { "prop": "" }]
+[{"prop":"csdm","label":"城市代码"},{"prop":"csmc","label":"城市名称"},{"prop":"nd","label":"年度"},{"prop":"wgc","label":"网格长(m)"},{"prop":"wgk","label":"网格宽(m)"},{"prop":"wgmc","label":"网格名称"},{"prop":"wgdm","label":"网格代码"},{"prop":"gnqdm","label":"功能区代码"},{"prop":"syfldm","label":"声源分类代码"},{"prop":"wgfgrks","label":"网格覆盖人口数(人)"},{"prop":"y","label":"月"},{"prop":"r","label":"日"},{"prop":"xs","label":"小时"},{"prop":"fz","label":"分钟"},{"prop":"leqa","label":"leqa"},{"prop":"l10a","label":"l10a"},{"prop":"l50a","label":"l50a"},{"prop":"l90a","label":"l90a"},{"prop":"lmax","label":"lmax"},{"prop":"lmin","label":"lmin"},{"prop":"bzc","label":"标准差"},{"prop":"opt_time","label":"数据处理时间"},{"prop":"buss_date","label":"业务时间"},{"prop":"agent_pk","label":"代理主键"},{"prop":""}]
