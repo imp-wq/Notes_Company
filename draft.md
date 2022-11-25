@@ -1,11 +1,21 @@
+### 11.25
+
+```
+tobacco, campaign, derive, adhere, 
+```
+
+* 多看13地，保持精神上的沟通。
+
+* side hustle: 副业
+* 
+
 ### 11.24
 
 ```
-distant, comprise, competent, illuminate, ingenious， rational, steer, tobacco, campaign
+distant, comprise, competent, illuminate, ingenious， rational, steer 
 ```
 
 * par for the course in academia: 在学术界是常有的事。
-* 
 
 
 
