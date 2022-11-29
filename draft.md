@@ -1,3 +1,29 @@
+### 11.29
+
+* 不同时期可以有不同侧重点。前一段在单词有些花了过多时间，近期可以多进行阅读和听力。
+
+* 尽量增加youtube娱乐英文视频占比。
+
+* 背单词时尽量尝试造句，以会用。
+
+* a sum of money: 一笔钱
+
+* The merits of your plan outweigh the defects.
+
+* comply->compliment vs complement
+
+* My misconception of her purpose cast a damp over her spirits.
+
+* 
+
+  
+
+```
+comprise, genuine, rival, 
+```
+
+
+
 ### 11.25
 
 ```
@@ -5,9 +31,7 @@ tobacco, campaign, derive, adhere,
 ```
 
 * 多看13地，保持精神上的沟通。
-
 * side hustle: 副业
-* 
 
 ### 11.24
 
